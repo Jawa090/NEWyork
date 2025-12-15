@@ -30,7 +30,7 @@ const steps = [
 
 const ProcessSteps = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-background overflow-hidden">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -38,114 +38,82 @@ const ProcessSteps = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-20"
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Our Process</span>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mt-3 mb-6">
             How We Deliver Accurate Estimates
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-lg">
             Our proven 4-step process ensures you get detailed, accurate estimates that help you win more profitable projects.
           </p>
         </motion.div>
 
         {/* Process Steps */}
         <div className="relative">
-          {/* Connection Line */}
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+          {/* Connection Line (Desktop) */}
+          <div className="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-border -z-10">
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: '100%' }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="h-full bg-primary"
+            />
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <motion.div
                 key={step.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative text-center lg:text-left"
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="group relative bg-card p-6 pt-12 rounded-2xl border border-border hover:border-primary/50 hover:shadow-strong transition-all duration-300"
               >
-                {/* Step Number */}
-                <div className="relative z-10 w-16 h-16 mx-auto lg:mx-0 rounded-2xl bg-primary flex items-center justify-center mb-6">
-                  <step.icon className="w-8 h-8 text-primary-foreground" />
-                  <span className="absolute -top-2 -right-2 w-6 h-6 bg-accent text-accent-foreground text-xs font-bold rounded-full flex items-center justify-center">
-                    {index + 1}
-                  </span>
+                {/* Step Number Badge */}
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 ring-4 ring-background">
+                  {index + 1}
                 </div>
 
                 {/* Content */}
-                <div className="space-y-4">
-                  <h3 className="text-xl font-serif font-semibold text-foreground">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                  
-                  {/* Details List */}
-                  <ul className="space-y-2">
-                    {step.details.map((detail, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                    <step.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-xl font-serif font-bold text-foreground mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
                 </div>
 
-                {/* Arrow for larger screens */}
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 -right-8 text-primary/30">
-                    <svg className="w-16 h-8" viewBox="0 0 64 32" fill="none">
-                      <path
-                        d="M2 16h56m0 0l-12-12m12 12l-12 12"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                )}
+                {/* Details Divider */}
+                <div className="h-px w-full bg-border/50 my-4 group-hover:bg-primary/20 transition-colors" />
+
+                {/* Details List */}
+                <ul className="space-y-2 text-left">
+                  {step.details.map((detail, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                      <HiCheckCircle className="w-4 h-4 text-primary mt-0.5" />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Timeline */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-16 p-8 bg-primary/5 rounded-2xl border border-primary/10"
+          transition={{ delay: 0.6 }}
+          className="mt-16 text-center"
         >
-          <div className="text-center">
-            <h3 className="text-xl font-serif font-semibold text-foreground mb-4">
-              Typical Timeline
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-3">
-                  <span className="text-primary font-bold">24h</span>
-                </div>
-                <p className="font-medium text-foreground">Standard Delivery</p>
-                <p className="text-sm text-muted-foreground">Most projects</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto rounded-full bg-accent/10 flex items-center justify-center mb-3">
-                  <span className="text-accent font-bold">12h</span>
-                </div>
-                <p className="font-medium text-foreground">Rush Service</p>
-                <p className="text-sm text-muted-foreground">Urgent deadlines</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto rounded-full bg-secondary/10 flex items-center justify-center mb-3">
-                  <span className="text-secondary-foreground font-bold">48h</span>
-                </div>
-                <p className="font-medium text-foreground">Complex Projects</p>
-                <p className="text-sm text-muted-foreground">Large developments</p>
-              </div>
-            </div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-medium">
+            <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+            Start winning more bids today with our proven process.
           </div>
         </motion.div>
       </div>

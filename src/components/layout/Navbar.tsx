@@ -3,15 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX, HiChevronDown } from 'react-icons/hi';
 import { Button } from '@/components/ui/button';
-
-const services = [
-  { name: 'Electrical Estimating', href: '/services/electrical' },
-  { name: 'Plumbing Estimating', href: '/services/plumbing' },
-  { name: 'HVAC Estimating', href: '/services/hvac' },
-  { name: 'Mechanical Estimating', href: '/services/mechanical' },
-  { name: 'Concrete Estimating', href: '/services/concrete' },
-  { name: 'General Construction Takeoff', href: '/services/general' },
-];
+import { services } from '@/data/servicesData';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -47,11 +39,10 @@ const Navbar = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-card/95 backdrop-blur-md shadow-medium' 
-          : 'bg-primary/95 backdrop-blur-sm'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-card/95 backdrop-blur-md shadow-medium'
+        : location.pathname === '/' ? 'bg-transparent' : 'bg-primary/95 backdrop-blur-sm'
+        }`}
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20">
@@ -61,12 +52,10 @@ const Navbar = () => {
               <span className="text-primary-foreground font-serif font-bold text-xl">NY</span>
             </div>
             <div className="hidden sm:block">
-              <p className={`font-serif font-bold text-lg leading-tight ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground'
-              }`}>New York</p>
-              <p className={`text-xs -mt-0.5 ${
-                isScrolled ? 'text-muted-foreground' : 'text-primary-foreground/80'
-              }`}>Estimators</p>
+              <p className={`font-serif font-bold text-lg leading-tight ${isScrolled ? 'text-foreground' : 'text-primary-foreground'
+                }`}>New York</p>
+              <p className={`text-xs -mt-0.5 ${isScrolled ? 'text-muted-foreground' : 'text-primary-foreground/80'
+                }`}>Estimators</p>
             </div>
           </Link>
 
@@ -81,43 +70,54 @@ const Navbar = () => {
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
                     <button
-                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-lg ${
-                        location.pathname.startsWith('/services')
-                          ? isScrolled 
-                            ? 'text-primary bg-primary/10' 
-                            : 'text-accent bg-primary-foreground/20'
-                          : isScrolled
-                            ? 'text-foreground hover:text-primary hover:bg-primary/5'
-                            : 'text-primary-foreground hover:text-accent hover:bg-primary-foreground/10'
-                      }`}
+                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-lg ${location.pathname.startsWith('/services')
+                        ? isScrolled
+                          ? 'text-primary bg-primary/10'
+                          : 'bg-white text-primary shadow-sm'
+                        : isScrolled
+                          ? 'text-foreground hover:text-primary hover:bg-primary/5'
+                          : 'text-primary-foreground hover:text-accent hover:bg-primary-foreground/10'
+                        }`}
                     >
                       {link.name}
                       <HiChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
                     </button>
-                    
+
                     <AnimatePresence>
                       {isServicesOpen && (
                         <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 mt-2 w-64 bg-card rounded-xl shadow-strong border border-border/50 overflow-hidden"
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-card rounded-2xl shadow-strong border border-border/50 overflow-hidden"
                         >
-                          <div className="py-2">
-                            {services.map((service) => (
-                              <Link
-                                key={service.name}
-                                to={service.href}
-                                className="block px-4 py-3 text-sm text-foreground hover:bg-primary/5 hover:text-primary transition-colors"
-                              >
-                                {service.name}
-                              </Link>
-                            ))}
-                            <div className="border-t border-border/50 mt-2 pt-2">
+                          <div className="p-2">
+                            <div className="grid grid-cols-2 gap-2">
+                              {services.map((service) => (
+                                <Link
+                                  key={service.slug}
+                                  to={`/services/${service.slug}`}
+                                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors group"
+                                >
+                                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                    <service.icon className="w-5 h-5" />
+                                  </div>
+                                  <div>
+                                    <h4 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                                      {service.title}
+                                    </h4>
+                                    <p className="text-xs text-muted-foreground line-clamp-1 mt-0.5">
+                                      {service.description}
+                                    </p>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                            <div className="border-t border-border/50 mt-4 pt-2">
                               <Link
                                 to="/services"
-                                className="block px-4 py-3 text-sm font-medium text-primary hover:bg-primary/5 transition-colors"
+                                className="flex items-center justify-center p-3 text-sm font-medium text-primary hover:bg-primary/5 rounded-lg transition-colors"
                               >
                                 View All Services →
                               </Link>
@@ -130,15 +130,14 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={link.href}
-                    className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg ${
-                      location.pathname === link.href
-                        ? isScrolled 
-                          ? 'text-primary bg-primary/10' 
-                          : 'text-accent bg-primary-foreground/20'
-                        : isScrolled
-                          ? 'text-foreground hover:text-primary hover:bg-primary/5'
-                          : 'text-primary-foreground hover:text-accent hover:bg-primary-foreground/10'
-                    }`}
+                    className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg ${location.pathname === link.href
+                      ? isScrolled
+                        ? 'text-primary bg-primary/10'
+                        : 'bg-white text-primary shadow-sm'
+                      : isScrolled
+                        ? 'text-foreground hover:text-primary hover:bg-primary/5'
+                        : 'text-primary-foreground hover:text-accent hover:bg-primary-foreground/10'
+                      }`}
                   >
                     {link.name}
                   </Link>
@@ -156,11 +155,10 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 transition-colors ${
-              isScrolled 
-                ? 'text-foreground hover:text-primary' 
-                : 'text-primary-foreground hover:text-accent'
-            }`}
+            className={`lg:hidden p-2 transition-colors ${isScrolled
+              ? 'text-foreground hover:text-primary'
+              : 'text-primary-foreground hover:text-accent'
+              }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
@@ -199,11 +197,11 @@ const Navbar = () => {
                             >
                               {services.map((service) => (
                                 <Link
-                                  key={service.name}
-                                  to={service.href}
+                                  key={service.slug}
+                                  to={`/services/${service.slug}`}
                                   className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                                 >
-                                  {service.name}
+                                  {service.title}
                                 </Link>
                               ))}
                             </motion.div>
@@ -213,11 +211,10 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={link.href}
-                        className={`block px-4 py-3 rounded-lg transition-colors ${
-                          location.pathname === link.href
-                            ? 'text-primary bg-primary/10'
-                            : 'text-foreground hover:text-primary hover:bg-primary/5'
-                        }`}
+                        className={`block px-4 py-3 rounded-lg transition-colors ${location.pathname === link.href
+                          ? 'text-primary bg-primary/10'
+                          : 'text-foreground hover:text-primary hover:bg-primary/5'
+                          }`}
                       >
                         {link.name}
                       </Link>

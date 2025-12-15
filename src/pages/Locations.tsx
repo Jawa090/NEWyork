@@ -31,7 +31,7 @@ const Locations = () => {
       </Helmet>
 
       <Navbar />
-      
+
       <main>
         {/* Hero */}
         <section className="pt-32 pb-16 bg-primary">
@@ -44,10 +44,10 @@ const Locations = () => {
             >
               <span className="text-primary-foreground/70 font-medium text-sm tracking-wider uppercase">Coverage Area</span>
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mt-3 mb-6">
-                Serving All Major New York Cities
+                Construction Estimating Services Across New York
               </h1>
               <p className="text-lg text-primary-foreground/80">
-                From NYC to Buffalo, we provide accurate construction estimates with local market expertise across New York State.
+                From NYC to Buffalo, we provide bid-winning construction estimates with local market expertise across the entire state.
               </p>
             </motion.div>
           </div>

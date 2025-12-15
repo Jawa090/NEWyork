@@ -10,7 +10,7 @@ const projects = [
     trades: ['Electrical', 'Plumbing', 'HVAC', 'Fire Safety'],
     completion: '2024',
     description: '42-story office building with state-of-the-art MEP systems.',
-    image: 'office-tower',
+    image: '/images/project-office.png',
   },
   {
     title: 'Brooklyn Residential Complex',
@@ -20,7 +20,7 @@ const projects = [
     trades: ['General Construction', 'Electrical', 'Plumbing'],
     completion: '2024',
     description: '120-unit luxury apartment complex with underground parking.',
-    image: 'residential-complex',
+    image: '/images/project-residential.png',
   },
   {
     title: 'Queens Medical Center',
@@ -30,7 +30,7 @@ const projects = [
     trades: ['Mechanical', 'Electrical', 'Medical Gas', 'Fire Safety'],
     completion: '2023',
     description: 'Modern medical facility with specialized HVAC and electrical systems.',
-    image: 'medical-center',
+    image: '/images/project-medical.png',
   },
 ];
 
@@ -66,13 +66,14 @@ const RecentProjects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-card rounded-2xl border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-medium transition-all duration-300"
             >
-              {/* Project Image Placeholder */}
-              <div className="relative h-48 bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
-                <div className="absolute inset-0 bg-primary/10">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <HiOfficeBuilding className="w-16 h-16 text-primary/30" />
-                  </div>
-                </div>
+              {/* Project Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 {/* Project Type Badge */}
                 <div className="absolute top-4 left-4 px-3 py-1 bg-primary text-primary-foreground text-sm font-medium rounded-full">
                   {project.type}

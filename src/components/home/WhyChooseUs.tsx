@@ -85,25 +85,13 @@ const WhyChooseUs = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden aspect-square bg-primary">
-              {/* Abstract Pattern */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 left-0 w-full h-full">
-                  {[...Array(6)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute border border-primary-foreground/20"
-                      style={{
-                        left: `${i * 20}%`,
-                        top: `${i * 15}%`,
-                        width: `${80 - i * 10}%`,
-                        height: `${80 - i * 10}%`,
-                        borderRadius: '1rem',
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
+            <div className="relative rounded-2xl overflow-hidden aspect-square">
+              <img
+                src="/images/why-choose-us.png"
+                alt="Construction Estimating Team"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
 
               {/* Content Overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">

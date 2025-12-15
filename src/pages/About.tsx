@@ -24,7 +24,7 @@ const About = () => {
       </Helmet>
 
       <Navbar />
-      
+
       <main>
         {/* Hero */}
         <section className="pt-32 pb-16 bg-primary">
@@ -37,10 +37,10 @@ const About = () => {
             >
               <span className="text-primary-foreground/70 font-medium text-sm tracking-wider uppercase">About Us</span>
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mt-3 mb-6">
-                New York's Trusted Estimating Partner
+                Accurate and Efficient Project Estimates
               </h1>
               <p className="text-lg text-primary-foreground/80">
-                Professional construction cost estimating services serving New York City and all major cities across New York State.
+                Meet NYC Estimating. We have been providing the most reliable construction estimating services in New York for over two decades.
               </p>
             </motion.div>
           </div>
@@ -60,13 +60,13 @@ const About = () => {
                   Who We Are
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  New York Estimators is a professional construction cost estimating company with over 10 years of experience serving contractors, subcontractors, developers, and architects across New York.
+                  NYC Estimating has been providing the most reliable and accurate construction estimating services NYC for a period of 24+ years. We cater estimations on a broad scale of construction work from residential houses to commercial, industrial construction, and large zone infrastructures.
                 </p>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Our team of US-based estimators uses industry-leading software including Planswift, Bluebeam, and RSMeans to deliver accurate, detailed estimates that help you win more bids and maximize project profitability.
+                  Our 40+ special expert teams are working day and night to provide the most accurate quantitative and budget estimations of material components. We specialize in electrical, mechanical, piping, and various other construction cost estimating services that guarantee project success.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  We specialize in all major construction trades including electrical, plumbing, HVAC, mechanical, and concrete work, providing CSI-formatted estimates that meet industry standards.
+                  We provide bid-winning consultancy and the most reliable estimation services using industry-leading software to deliver brilliance through decades of experience.
                 </p>
               </motion.div>
 
@@ -79,7 +79,7 @@ const About = () => {
               >
                 <div className="aspect-video rounded-2xl bg-primary/10 flex items-center justify-center">
                   <div className="text-center p-8">
-                    <p className="text-6xl font-serif font-bold text-primary mb-2">10+</p>
+                    <p className="text-6xl font-serif font-bold text-primary mb-2">24+</p>
                     <p className="text-muted-foreground">Years of Excellence</p>
                   </div>
                 </div>

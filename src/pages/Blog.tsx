@@ -19,6 +19,7 @@ const blogPosts = [
     readTime: '8 min read',
     views: '2.1k',
     image: 'nyc-skyline',
+    imagePath: '/images/hero-bg.png',
   },
   {
     slug: 'construction-estimating-mistakes',
@@ -30,6 +31,7 @@ const blogPosts = [
     readTime: '6 min read',
     views: '1.8k',
     image: 'calculator-plans',
+    imagePath: '/images/why-choose-us.png',
   },
   {
     slug: 'electrical-estimating-tips',
@@ -41,6 +43,7 @@ const blogPosts = [
     readTime: '10 min read',
     views: '1.5k',
     image: 'electrical-work',
+    imagePath: '/images/project-office.png',
   },
   {
     slug: 'nyc-construction-cost-trends',
@@ -52,6 +55,7 @@ const blogPosts = [
     readTime: '12 min read',
     views: '3.2k',
     image: 'construction-site',
+    imagePath: '/images/sample-commercial.png',
   },
   {
     slug: 'plumbing-estimating-guide',
@@ -63,6 +67,7 @@ const blogPosts = [
     readTime: '9 min read',
     views: '1.3k',
     image: 'plumbing-pipes',
+    imagePath: '/images/project-residential.png',
   },
   {
     slug: 'hvac-cost-estimation',
@@ -74,6 +79,7 @@ const blogPosts = [
     readTime: '11 min read',
     views: '1.7k',
     image: 'hvac-system',
+    imagePath: '/images/project-medical.png',
   },
 ];
 
@@ -86,7 +92,7 @@ const Blog = () => {
       </Helmet>
 
       <Navbar />
-      
+
       <main>
         {/* Hero */}
         <section className="pt-32 pb-16 bg-primary">
@@ -104,7 +110,7 @@ const Blog = () => {
               <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto">
                 Expert insights, industry trends, and practical tips to help you succeed in construction estimating and win more profitable projects.
               </p>
-              
+
               <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-primary-foreground/20">
                 <div className="text-center">
                   <p className="text-2xl md:text-3xl font-serif font-bold text-primary-foreground">50+</p>
@@ -155,19 +161,17 @@ const Blog = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group bg-card rounded-2xl border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-strong transition-all duration-300"
                 >
-                  <div className="relative aspect-video bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
-                    <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-12 h-12 mx-auto rounded-xl bg-primary/20 flex items-center justify-center mb-2">
-                          <span className="text-primary font-serif font-bold text-lg">
-                            {post.category.charAt(0)}
-                          </span>
-                        </div>
-                        <p className="text-primary/60 text-xs font-medium">{post.image}</p>
-                      </div>
-                    </div>
+                  {/* Blog Post Image */}
+                  <div className="relative aspect-video overflow-hidden">
+                    <img
+                      src={post.imagePath}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
+
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
+                      <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full shadow-sm">
                         {post.category}
                       </span>
                     </div>

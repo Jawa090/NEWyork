@@ -1,8 +1,14 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { HiArrowRight, HiDocumentText } from 'react-icons/hi';
 import { Button } from '@/components/ui/button';
+
+const backgroundImages = [
+  '/images/hero-skyline.jpg',
+  '/images/hero-blueprint.jpg',
+  '/images/hero-construction.jpg'
+];
 
 interface CounterProps {
   end: number;
@@ -75,29 +81,59 @@ const Counter = ({ end, suffix = '', label, delay = 0 }: CounterProps) => {
 };
 
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   const stats = [
-    { end: 10, suffix: '+', label: 'Years Experience', delay: 0 },
-    { end: 8000, suffix: '+', label: 'Estimates Delivered', delay: 200 },
-    { end: 98, suffix: '%', label: 'Accuracy Rate', delay: 400 },
-    { end: 50, suffix: '+', label: 'Cities Covered', delay: 600 },
+    { end: 24, suffix: '+', label: 'Years Experience', delay: 0 },
+    { end: 40, suffix: '+', label: 'Expert Teams', delay: 200 },
+    { end: 99, suffix: '%', label: 'Accuracy Rate', delay: 400 },
+    { end: 2000, suffix: '+', label: 'Projects Completed', delay: 600 },
   ];
 
   return (
     <section className="relative py-16 md:py-20 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-primary">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary-foreground/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-foreground/10 rounded-full blur-3xl" />
-        </div>
-        {/* Grid Pattern */}
-        <div 
-          className="absolute inset-0 opacity-5"
+      {/* Background Slider */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-black/50 z-10" />
+
+        {/* Tech Grid Overlay */}
+        <div
+          className="absolute inset-0 z-10 opacity-[0.07] pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
+            backgroundSize: '80px 80px'
           }}
         />
+
+        {/* Animated Scanning Line */}
+        <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
+          <motion.div
+            animate={{ top: ['0%', '100%'], opacity: [0, 0.5, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_10px_rgba(34,197,94,0.5)]"
+          />
+        </div>
+
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentImageIndex}
+            src={backgroundImages[currentImageIndex]}
+            alt="NYC Construction"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
       </div>
 
       <div className="container-custom relative z-10">
@@ -110,7 +146,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-primary-foreground/90 text-sm font-medium">Trusted by 2,000+ Contractors</span>
+            <span className="text-primary-foreground/90 text-sm font-medium">Trusted by NYC's Top Contractors</span>
           </motion.div>
 
           {/* Headline */}
@@ -120,14 +156,13 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground leading-tight mb-6"
           >
-            Professional Construction{' '}
+            Construction Estimating{' '}
             <span className="relative">
-              Estimating Services
+              Services NYC
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-accent/50" viewBox="0 0 200 12" preserveAspectRatio="none">
                 <path d="M0,8 Q50,0 100,8 T200,8" fill="none" stroke="currentColor" strokeWidth="3" />
               </svg>
             </span>{' '}
-            in New York
           </motion.h1>
 
           {/* Subheading */}
@@ -137,7 +172,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto"
           >
-            Accurate, fast & affordable cost estimates for residential, commercial & industrial projects. Win more bids with precise takeoffs.
+            Meet NYC Estimating for accurate and efficient project estimates. We provide detailed construction estimating services for residential, commercial, and industrial projects with 40+ expert teams working to guarantee your success.
           </motion.p>
 
           {/* CTA Buttons */}

@@ -46,14 +46,14 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     toast({
       title: "Message Sent!",
       description: "We'll get back to you within 24 hours.",
     });
-    
+
     setIsSubmitting(false);
   };
 
@@ -65,7 +65,7 @@ const Contact = () => {
       </Helmet>
 
       <Navbar />
-      
+
       <main>
         {/* Hero */}
         <section className="pt-32 pb-16 bg-primary">
@@ -78,10 +78,10 @@ const Contact = () => {
             >
               <span className="text-primary-foreground/70 font-medium text-sm tracking-wider uppercase">Get in Touch</span>
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mt-3 mb-6">
-                Contact Us
+                Contact NYC Estimating
               </h1>
               <p className="text-lg text-primary-foreground/80">
-                Have questions? Ready to start your estimate? Reach out and our team will respond within 24 hours.
+                Ready to win more bids? Reach out for detailed, accurate, and reliable construction estimates. Our team is ready to respond within 24 hours.
               </p>
             </motion.div>
           </div>
@@ -165,7 +165,7 @@ const Contact = () => {
 
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">Project Details</label>
-                      <Textarea 
+                      <Textarea
                         placeholder="Tell us about your project, timeline, and any specific requirements..."
                         rows={4}
                       />
