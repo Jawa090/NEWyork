@@ -38,7 +38,7 @@ const ServicesOverview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-12"
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Construction Cost Estimating Services</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
@@ -50,7 +50,7 @@ const ServicesOverview = () => {
         </motion.div>
 
         {/* Main Service Categories */}
-        <div className="mb-20">
+        <div className="mb-16">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -137,7 +137,7 @@ const ServicesOverview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-12"
+          className="text-center mt-8"
         >
           <Link
             to="/services"

@@ -38,7 +38,7 @@ const ProcessSteps = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-20"
+          className="text-center max-w-2xl mx-auto mb-16"
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Our Process</span>
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mt-3 mb-6">
@@ -109,7 +109,7 @@ const ProcessSteps = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
-          className="mt-16 text-center"
+          className="mt-12 text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-medium">
             <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
@@ -123,7 +123,7 @@ const ProcessSteps = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-20"
+          className="mt-16"
         >
           <div className="text-center mb-12">
             <h3 className="text-2xl font-serif font-bold text-foreground mb-4">

@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { HiCheckCircle, HiClock, HiShieldCheck, HiUserGroup, HiDocument, HiBriefcase } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
+import { HiCheckCircle, HiClock, HiShieldCheck, HiUserGroup, HiDocument, HiBriefcase, HiArrowRight } from 'react-icons/hi';
+import { Button } from '@/components/ui/button';
 
 const features = [
   {
@@ -55,7 +57,7 @@ const WhyChooseUs = () => {
             </p>
 
             {/* Features Grid */}
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-6 mb-8">
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.title}
@@ -75,6 +77,21 @@ const WhyChooseUs = () => {
                 </motion.div>
               ))}
             </div>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Button variant="default" size="lg" className="group" asChild>
+                <Link to="/about">
+                  Learn More About Us
+                  <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </motion.div>
           </motion.div>
 
           {/* Right Content - Visual */}

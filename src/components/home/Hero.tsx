@@ -70,10 +70,10 @@ const Counter = ({ end, suffix = '', label, delay = 0 }: CounterProps) => {
       transition={{ duration: 0.5, delay: delay / 1000 }}
       className="text-center"
     >
-      <p className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground">
+      <p className="text-3xl md:text-4xl font-serif font-bold text-white">
         {count}{suffix}
       </p>
-      <p className="text-primary-foreground/80 text-sm mt-1">{label}</p>
+      <p className="text-white/80 text-sm mt-1">{label}</p>
     </motion.div>
   );
 };
@@ -96,11 +96,12 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative py-16 md:py-20 overflow-hidden">
+    <section className="relative pt-56 pb-12 md:pt-60 md:pb-16 overflow-hidden">
       {/* Background */}
       {/* Background Slider */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-black/50 z-10" />
+        {/* Full green transparent overlay */}
+        <div className="absolute inset-0 bg-primary/70 z-10" />
 
         <AnimatePresence mode="popLayout">
           <motion.img
@@ -118,28 +119,16 @@ const Hero = () => {
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-primary-foreground/90 text-sm font-medium">Trusted by NYC's Top Contractors</span>
-          </motion.div>
-
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground leading-tight mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6"
           >
-            <span className="text-primary">New York Construction{' '}
-              Estimating Services</span>
+            New York Construction Estimating Services
             <span className="relative">
-              <svg className="absolute -bottom-2 left-0 w-full h-3 text-accent/50" viewBox="0 0 200 12" preserveAspectRatio="none">
+              <svg className="absolute -bottom-2 left-0 w-full h-3 text-white/50" viewBox="0 0 200 12" preserveAspectRatio="none">
                 <path d="M0,8 Q50,0 100,8 T200,8" fill="none" stroke="currentColor" strokeWidth="3" />
               </svg>
             </span>
@@ -150,7 +139,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto"
           >
             The construction industry plays an important role in making communities and architecture in the USA. The right estimating is necessary for plans with better budgets. We provide complete services for residential, commercial and industrial projects with accurate cost estimates and market-based pricing.
           </motion.p>
@@ -160,7 +149,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <Button variant="cta" size="xl" className="w-full sm:w-auto group" asChild>
               <Link to="/contact">
@@ -181,7 +170,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pt-8 border-t border-primary-foreground/20"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pt-8 border-t border-white/20"
           >
             {stats.map((stat) => (
               <Counter key={stat.label} {...stat} />
@@ -197,11 +186,11 @@ const Hero = () => {
         transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
+        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-1.5 rounded-full bg-primary-foreground/60"
+            className="w-1.5 h-1.5 rounded-full bg-white/60"
           />
         </div>
       </motion.div>

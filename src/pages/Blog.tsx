@@ -95,7 +95,7 @@ const Blog = () => {
 
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-16 bg-primary">
+        <section className="pt-56 pb-16 md:pt-60 md:pb-16 bg-primary">
           <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

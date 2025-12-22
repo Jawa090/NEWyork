@@ -44,7 +44,7 @@ const WhatWeOffer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-12"
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">What We Offer</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
@@ -85,7 +85,7 @@ const WhatWeOffer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-16 text-center p-8 bg-primary/5 rounded-2xl border border-primary/10"
+          className="mt-12 text-center p-8 bg-primary/5 rounded-2xl border border-primary/10"
         >
           <h3 className="text-xl font-serif font-semibold text-foreground mb-4">
             Comprehensive Takeoff Services

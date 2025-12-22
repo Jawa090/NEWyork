@@ -184,7 +184,7 @@ const Samples = () => {
 
       <main>
         {/* Hero */}
-        <section className="pt-32 pb-12 bg-primary">
+        <section className="pt-56 pb-12 md:pt-60 md:pb-12 bg-primary">
           <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

@@ -44,7 +44,7 @@ const RecentProjects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-12"
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Portfolio</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
@@ -134,7 +134,7 @@ const RecentProjects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 p-8 bg-card rounded-2xl border border-border/50"
+          className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 p-8 bg-card rounded-2xl border border-border/50"
         >
           <div className="text-center">
             <p className="text-3xl font-serif font-bold text-primary mb-2">$500M+</p>
