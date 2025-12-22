@@ -48,7 +48,7 @@ const WhatWeOffer = () => {
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">What We Offer</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
-            What We Offer as NYC Construction Estimating Experts
+            Complete Estimating Solutions & Value-Added Services
           </h2>
           <p className="text-muted-foreground">
             Better construction sites start with good planning and clarity. Our calculations will give you the base to turn your plans into reality. New York construction estimating services prepare each estimate with a focus on accuracy.

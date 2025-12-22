@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { projectTypeServices } from '@/data/servicesData';
 import { trades } from '@/data/tradesData';
 import TopNav from './TopNav';
-import OfferBanner from './OfferBanner';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -43,16 +42,8 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <OfferBanner />
       <TopNav />
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className={`transition-all duration-300 ${isScrolled
-          ? 'bg-card/95 backdrop-blur-md shadow-medium'
-          : location.pathname === '/' ? 'bg-transparent' : 'bg-primary/95 backdrop-blur-sm'
-          }`}
-      >
+      <header className="bg-white shadow-md border-b border-gray-200">
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -167,12 +158,8 @@ const Navbar = () => {
                   <Link
                     to={link.href}
                     className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg ${location.pathname === link.href
-                      ? isScrolled
-                        ? 'text-primary bg-primary/10'
-                        : 'bg-white text-primary shadow-sm'
-                      : isScrolled
-                        ? 'text-foreground hover:text-primary hover:bg-primary/5'
-                        : 'text-primary-foreground hover:text-accent hover:bg-primary-foreground/10'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-gray-700 hover:text-primary hover:bg-primary/5'
                       }`}
                   >
                     {link.name}
@@ -191,10 +178,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 transition-colors ${isScrolled
-              ? 'text-foreground hover:text-primary'
-              : 'text-primary-foreground hover:text-accent'
-              }`}
+            className="lg:hidden p-2 transition-colors text-gray-700 hover:text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
@@ -285,7 +269,7 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </nav>
-    </motion.header>
+    </header>
     </div>
   );
 };

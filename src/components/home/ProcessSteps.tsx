@@ -42,7 +42,7 @@ const ProcessSteps = () => {
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Our Process</span>
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mt-3 mb-6">
-            Steps to Get Your Construction Estimate
+            Simple 4-Step Process to Get Started
           </h2>
           <p className="text-muted-foreground text-lg">
             Our streamlined process ensures you get accurate estimates quickly and efficiently with complete transparency.

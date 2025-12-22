@@ -67,7 +67,7 @@ const Industries = () => {
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Who We Serve</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
-            Industries We Serve
+            Construction Industry Sectors We Support
           </h2>
           <p className="text-muted-foreground">
             From small residential projects to large commercial developments, we provide estimating services tailored to your industry needs.

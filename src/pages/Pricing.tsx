@@ -179,7 +179,7 @@ const Pricing = () => {
               className="max-w-4xl mx-auto text-center"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground mb-6">
-                Paradise Estimating
+                New York Estimation
               </h1>
               <h2 className="text-2xl md:text-3xl font-serif font-semibold text-primary-foreground/90 mb-6">
                 Best Estimates at a Reasonable Budget

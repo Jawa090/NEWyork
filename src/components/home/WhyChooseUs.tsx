@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
           >
             <span className="text-primary font-semibold text-sm tracking-wider uppercase">Why Choose Us</span>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-6">
-              Trusted Construction Estimating Services in NYC
+              Why Choose Our Expert Team
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
               For the past 20 years, we have been giving you the best New York construction estimating services. We have supported many projects from small ones to industrial developments. Our experience makes us the perfect choice for your cost analysis needs. We have a team of professionals who give detailed quantity takeoffs for your project with many reviews and trade construction estimates for accurate numbers.

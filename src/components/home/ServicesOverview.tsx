@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { HiArrowRight } from 'react-icons/hi';
+import { Button } from '@/components/ui/button';
 import { projectTypeServices, tradeServices } from '@/data/servicesData';
 
 // Main Service Categories
@@ -42,7 +43,7 @@ const ServicesOverview = () => {
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Construction Cost Estimating Services</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
-            Professional Construction Takeoff Services in New York
+            Comprehensive Construction Estimating Solutions
           </h2>
           <p className="text-muted-foreground">
             Construction takeoffs are important to control costs and plan resources. It also helps you complete tasks on time. In the competitive market, we cannot afford even small errors. That's why we prepare a full material list with needed expertise and measure all material and labor hours for best results.
@@ -81,9 +82,6 @@ const ServicesOverview = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     {service.description}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                    Learn More <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
                 </Link>
               </motion.div>
             ))}
@@ -122,29 +120,26 @@ const ServicesOverview = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     {service.description}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                    Learn More <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
                 </Link>
               </motion.div>
             ))}
           </motion.div>
         </div>
 
-        {/* CTA */}
+        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-8"
+          className="text-center mt-12"
         >
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-          >
-            View All Services <HiArrowRight className="w-5 h-5" />
-          </Link>
+          <Button variant="cta" size="xl" className="group" asChild>
+            <Link to="/contact">
+              Get 20% OFF - Contact Us Now!
+              <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
         </motion.div>
       </div>
     </section>

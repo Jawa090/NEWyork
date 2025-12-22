@@ -21,7 +21,7 @@ const CTASection = () => {
           className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary-foreground mb-6">
-            Ready to Win More Bids?
+            New York Construction Estimating Services
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-10 max-w-xl mx-auto">
             Get accurate, professional estimates delivered within 24 hours. Contact us at zzz@gmail.com to avail our New York construction estimating services.

@@ -63,7 +63,7 @@ const ClientTypes = () => {
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Our Clients</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
-            Who We Serve
+            Trusted by Construction Professionals
           </h2>
           <p className="text-muted-foreground">
             We provide New York construction estimating services to a wide range of professionals in the construction industry.

@@ -96,7 +96,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative pt-56 pb-12 md:pt-60 md:pb-16 overflow-hidden">
+    <section className="relative pt-44 pb-12 md:pt-48 md:pb-16 overflow-hidden">
       {/* Background */}
       {/* Background Slider */}
       <div className="absolute inset-0">
