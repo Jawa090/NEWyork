@@ -5,9 +5,7 @@ import { HiArrowRight, HiDocumentText } from 'react-icons/hi';
 import { Button } from '@/components/ui/button';
 
 const backgroundImages = [
-  '/images/hero-skyline.jpg',
-  '/images/hero-blueprint.jpg',
-  '/images/hero-construction.jpg'
+  '/images/hero-blueprint.jpg'
 ];
 
 interface CounterProps {
@@ -91,7 +89,7 @@ const Hero = () => {
   }, []);
 
   const stats = [
-    { end: 24, suffix: '+', label: 'Years Experience', delay: 0 },
+    { end: 20, suffix: '+', label: 'Years Experience', delay: 0 },
     { end: 40, suffix: '+', label: 'Expert Teams', delay: 200 },
     { end: 99, suffix: '%', label: 'Accuracy Rate', delay: 400 },
     { end: 2000, suffix: '+', label: 'Projects Completed', delay: 600 },
@@ -103,24 +101,6 @@ const Hero = () => {
       {/* Background Slider */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-black/50 z-10" />
-
-        {/* Tech Grid Overlay */}
-        <div
-          className="absolute inset-0 z-10 opacity-[0.07] pointer-events-none"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
-            backgroundSize: '80px 80px'
-          }}
-        />
-
-        {/* Animated Scanning Line */}
-        <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-          <motion.div
-            animate={{ top: ['0%', '100%'], opacity: [0, 0.5, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent shadow-[0_0_10px_rgba(34,197,94,0.5)]"
-          />
-        </div>
 
         <AnimatePresence mode="popLayout">
           <motion.img
@@ -156,13 +136,13 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground leading-tight mb-6"
           >
-            Construction Estimating{' '}
+            <span className="text-primary">New York Construction{' '}
+              Estimating Services</span>
             <span className="relative">
-              Services NYC
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-accent/50" viewBox="0 0 200 12" preserveAspectRatio="none">
                 <path d="M0,8 Q50,0 100,8 T200,8" fill="none" stroke="currentColor" strokeWidth="3" />
               </svg>
-            </span>{' '}
+            </span>
           </motion.h1>
 
           {/* Subheading */}
@@ -172,7 +152,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto"
           >
-            Meet NYC Estimating for accurate and efficient project estimates. We provide detailed construction estimating services for residential, commercial, and industrial projects with 40+ expert teams working to guarantee your success.
+            The construction industry plays an important role in making communities and architecture in the USA. The right estimating is necessary for plans with better budgets. We provide complete services for residential, commercial and industrial projects with accurate cost estimates and market-based pricing.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -182,15 +162,15 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
-            <Button variant="heroOutline" size="xl" className="w-full sm:w-auto group" asChild>
+            <Button variant="cta" size="xl" className="w-full sm:w-auto group" asChild>
               <Link to="/contact">
                 Get a Free Quote
                 <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button variant="ghost" size="xl" className="w-full sm:w-auto text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10" asChild>
+            <Button variant="heroOutline" size="xl" className="w-full sm:w-auto group" asChild>
               <Link to="/samples">
-                <HiDocumentText className="w-5 h-5" />
+                <HiDocumentText className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 View Sample Estimates
               </Link>
             </Button>

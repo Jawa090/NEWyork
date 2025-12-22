@@ -1,16 +1,13 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { HiPhone, HiMail, HiLocationMarker, HiClock, HiUpload } from 'react-icons/hi';
+import { HiPhone, HiMail, HiLocationMarker, HiClock, HiUpload, HiCheckCircle } from 'react-icons/hi';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import ContactMethods from '@/components/contact/ContactMethods';
-import OfficeLocations from '@/components/contact/OfficeLocations';
-import ContactFAQ from '@/components/contact/ContactFAQ';
+import SEOHead from '@/components/SEOHead';
 
 const contactInfo = [
   {
@@ -39,6 +36,44 @@ const contactInfo = [
   },
 ];
 
+const whyContactUs = [
+  {
+    title: 'Fast Response',
+    description: 'We reply to all inquiries within 2 hours during business hours.',
+    icon: HiClock,
+  },
+  {
+    title: 'Expert Advice',
+    description: 'You will speak directly with a senior estimator, not a sales bot.',
+    icon: HiCheckCircle,
+  },
+  {
+    title: 'Confidentiality',
+    description: 'Your project plans and data are kept 100% secure and private.',
+    icon: HiLocationMarker,
+  },
+  {
+    title: 'No-Obligation Quotes',
+    description: 'We provide clear, upfront pricing with no hidden fees.',
+    icon: HiMail,
+  },
+];
+
+const faqs = [
+  {
+    question: 'How do I send my blueprints to you?',
+    answer: 'The easiest way is to use our contact form and click "Upload Plans." For very large files, you can email us a Google Drive or WeTransfer link.',
+  },
+  {
+    question: 'Do you offer a free consultation?',
+    answer: 'Yes! We offer a free initial consultation to discuss your project scope and bidding requirements.',
+  },
+  {
+    question: 'Can you work with local pricing?',
+    answer: 'Absolutely. We use zip-code-specific data to ensure your material and labor costs match your local market exactly.',
+  },
+];
+
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,10 +94,7 @@ const Contact = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contact Us | New York Estimators - Construction Estimating Services</title>
-        <meta name="description" content="Contact New York Estimators for professional construction cost estimates. Call (212) 555-1234 or email us. Serving NYC and all major NY cities." />
-      </Helmet>
+      <SEOHead />
 
       <Navbar />
 
@@ -74,24 +106,59 @@ const Contact = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-3xl"
+              className="max-w-4xl"
             >
               <span className="text-primary-foreground/70 font-medium text-sm tracking-wider uppercase">Get in Touch</span>
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mt-3 mb-6">
-                Contact NYC Estimating
+                Contact New York Estimating | Accurate Construction Estimating Services
               </h1>
               <p className="text-lg text-primary-foreground/80">
-                Ready to win more bids? Reach out for detailed, accurate, and reliable construction estimates. Our team is ready to respond within 24 hours.
+                Have a question or need a precise material takeoff? Our expert team is ready to help you win your next bid. Reach out today for a free consultation.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Contact Methods */}
-        <ContactMethods />
+        {/* Why Contact Us */}
+        <section className="section-padding bg-background">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center max-w-3xl mx-auto mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+                Why Contact Us?
+              </h2>
+              <p className="text-muted-foreground">
+                We value your time. When you reach out to New York Estimating, you can expect:
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {whyContactUs.map((reason, index) => (
+                <motion.div
+                  key={reason.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 bg-card rounded-xl border border-border/50 text-center hover-lift"
+                >
+                  <div className="w-12 h-12 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <reason.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">{reason.title}</h3>
+                  <p className="text-muted-foreground text-sm">{reason.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Contact Section */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-grey-cool">
           <div className="container-custom">
             <div className="grid lg:grid-cols-3 gap-12">
               {/* Contact Form */}
@@ -103,6 +170,7 @@ const Contact = () => {
                 className="lg:col-span-2"
               >
                 <div className="bg-card rounded-2xl p-8 border border-border/50">
+                  <h3 className="text-2xl font-serif font-bold text-foreground mb-6">Get Your Free Quote</h3>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div>
@@ -134,19 +202,21 @@ const Contact = () => {
                           <option value="residential">Residential</option>
                           <option value="commercial">Commercial</option>
                           <option value="industrial">Industrial</option>
-                          <option value="institutional">Institutional</option>
+                          <option value="civil">Civil</option>
                         </select>
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-foreground mb-2">Trade Selection *</label>
                         <select className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground" required>
                           <option value="">Select trade</option>
-                          <option value="electrical">Electrical</option>
-                          <option value="plumbing">Plumbing</option>
-                          <option value="hvac">HVAC</option>
-                          <option value="mechanical">Mechanical</option>
+                          <option value="mep">MEP</option>
                           <option value="concrete">Concrete</option>
-                          <option value="general">General Construction</option>
+                          <option value="steel">Steel</option>
+                          <option value="drywall">Drywall</option>
+                          <option value="lumber">Lumber</option>
+                          <option value="earthwork">Earthwork</option>
+                          <option value="masonry">Masonry</option>
+                          <option value="openings">Openings</option>
                         </select>
                       </div>
                     </div>
@@ -212,7 +282,7 @@ const Contact = () => {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span className="text-sm text-muted-foreground">Email response within 4 hours</span>
+                      <span className="text-sm text-muted-foreground">Email response within 2 hours</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-primary" />
@@ -226,7 +296,7 @@ const Contact = () => {
                 </div>
 
                 {/* Map Placeholder */}
-                <div className="aspect-square rounded-xl bg-grey-cool border border-border/50 flex items-center justify-center">
+                <div className="aspect-square rounded-xl bg-background border border-border/50 flex items-center justify-center">
                   <div className="text-center">
                     <HiLocationMarker className="w-12 h-12 text-primary/30 mx-auto mb-2" />
                     <p className="text-muted-foreground text-sm font-medium">Serving All NYC Boroughs</p>
@@ -238,11 +308,40 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Office Locations */}
-        <OfficeLocations />
+        {/* FAQs */}
+        <section className="section-padding bg-background">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center max-w-2xl mx-auto mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+                FAQs
+              </h2>
+              <p className="text-muted-foreground">
+                Common questions about contacting us and our services.
+              </p>
+            </motion.div>
 
-        {/* Contact FAQ */}
-        <ContactFAQ />
+            <div className="max-w-4xl mx-auto space-y-6">
+              {faqs.map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 bg-card rounded-xl border border-border/50"
+                >
+                  <h3 className="text-lg font-semibold text-foreground mb-3">{faq.question}</h3>
+                  <p className="text-muted-foreground">{faq.answer}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

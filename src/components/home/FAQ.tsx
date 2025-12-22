@@ -4,36 +4,36 @@ import { HiChevronDown } from 'react-icons/hi';
 
 const faqs = [
   {
-    question: 'How accurate are your construction estimates?',
-    answer: 'Our estimates maintain a 98% accuracy rate based on client feedback. We use industry-leading software, local market data, and experienced estimators to ensure precision. All estimates include detailed backup documentation and are organized using CSI MasterFormat standards.',
+    question: 'Do you offer Preliminary estimating services?',
+    answer: 'Yes, we offer preliminary services to give rough costs early on. This is possible even when your drawings are incomplete. Hence, we help you plan better and make smart decisions.',
+  },
+  {
+    question: 'What information do you need to start working on the cost analysis?',
+    answer: 'To start, we will need your drawings and details with a timeline. Even if you lack complete plans, share what you have. However, more details will help construction estimating New York to get the exact calculation.',
+  },
+  {
+    question: 'Are your estimates good for bidding processes?',
+    answer: 'Yes, the numbers at New York construction estimating services are good for bidding. We give clear numbers that you can use to win bids with confidence. Our reports are also easy to review to make good proposals.',
+  },
+  {
+    question: 'Do you also offer ongoing support during your projects?',
+    answer: 'Yes, we stay available for you even after giving you assessments. Our team will help you with revisions and answer questions. Our goal is to support you in the complete process of your development.',
   },
   {
     question: 'What is your typical turnaround time?',
-    answer: 'Standard delivery is 24-48 hours for most projects. We also offer rush services with 12-hour turnaround for urgent deadlines. Complex projects like large commercial developments may require up to 72 hours to ensure thoroughness.',
+    answer: 'We offer fast turnaround time of 24 hours for most projects. We also provide 24/7 support for clients to ensure you get the help you need when you need it.',
   },
   {
     question: 'What types of projects do you estimate?',
-    answer: 'We handle all project types including residential, commercial, industrial, and institutional construction. Our services cover electrical, plumbing, HVAC, mechanical, concrete, and general construction estimates for projects ranging from $10K to $50M+.',
+    answer: 'We handle all project types including residential, commercial, industrial, and civil construction. Our services cover MEP, concrete, steel, drywall, lumber, earthwork, masonry, and opening estimates for all project sizes.',
   },
   {
-    question: 'Do you provide estimates for all NYC boroughs?',
-    answer: 'Yes, we serve all five NYC boroughs: Manhattan, Brooklyn, Queens, Bronx, and Staten Island. Our pricing reflects local labor rates, material costs, and permit requirements specific to each area.',
+    question: 'How accurate are your construction estimates?',
+    answer: 'Our estimates maintain high accuracy rates based on industry standard cost values with real world practices. We use the latest software and experienced professionals to ensure precision with detailed backup documentation.',
   },
   {
-    question: 'What information do you need to provide an estimate?',
-    answer: 'We need architectural drawings, specifications, project scope, and any addendums or RFIs. For preliminary estimates, even basic sketches or plans work. The more detailed information you provide, the more accurate our estimate will be.',
-  },
-  {
-    question: 'How much do your estimating services cost?',
-    answer: 'Pricing varies based on project size, complexity, and turnaround time. We offer competitive rates starting from $200 for small residential projects. Contact us for a free quote - we\'ll provide transparent pricing with no hidden fees.',
-  },
-  {
-    question: 'Do you offer quantity takeoffs only?',
-    answer: 'Yes, we provide both quantity takeoffs and full cost estimates. You can choose takeoffs only if you prefer to apply your own pricing, or get complete estimates with material and labor costs included.',
-  },
-  {
-    question: 'Are your estimators licensed and insured?',
-    answer: 'All our estimators are certified professionals with extensive construction industry experience. We carry professional liability insurance and maintain strict confidentiality protocols for all client projects.',
+    question: 'What deliverables do you provide?',
+    answer: 'You will receive cost reports in Excel format, full material lists, clear documents with exact labor hours, marked plans for easy references, and industry standard cost values with real world practices.',
   },
 ];
 
@@ -65,53 +65,55 @@ const FAQ = () => {
         </motion.div>
 
         {/* FAQ List */}
-        <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="mb-4"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full text-left p-6 bg-card rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300 group"
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="mb-4"
               >
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors pr-4">
-                    {faq.question}
-                  </h3>
-                  <motion.div
-                    animate={{ rotate: openIndex === index ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex-shrink-0"
-                  >
-                    <HiChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </motion.div>
-                </div>
-              </button>
-              
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-6 pt-2">
-                      <p className="text-muted-foreground leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full text-left p-6 bg-card rounded-xl border border-border/50 hover:border-primary/30 transition-all duration-300 group"
+                >
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors pr-4">
+                      {faq.question}
+                    </h3>
+                    <motion.div
+                      animate={{ rotate: openIndex === index ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex-shrink-0"
+                    >
+                      <HiChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </motion.div>
+                  </div>
+                </button>
+                
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-2">
+                        <p className="text-muted-foreground leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Contact CTA */}
@@ -136,10 +138,10 @@ const FAQ = () => {
               Call (212) 555-1234
             </a>
             <a
-              href="mailto:info@nyestimators.com"
+              href="mailto:zzz@gmail.com"
               className="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
             >
-              Email Us
+              Email Us at zzz@gmail.com
             </a>
           </div>
         </motion.div>

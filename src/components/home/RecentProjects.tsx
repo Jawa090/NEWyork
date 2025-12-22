@@ -48,10 +48,10 @@ const RecentProjects = () => {
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Portfolio</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
-            Recent Project Success Stories
+            Recent Projects
           </h2>
           <p className="text-muted-foreground">
-            Explore some of our recent estimating projects across New York's diverse construction landscape.
+            Our past work highlights the standards we bring to you. Explore some of our recent estimating projects across New York's diverse construction landscape.
           </p>
         </motion.div>
 

@@ -24,7 +24,7 @@ const CTASection = () => {
             Ready to Win More Bids?
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-10 max-w-xl mx-auto">
-            Get accurate, professional estimates delivered within 24-48 hours. Start with a free quote today.
+            Get accurate, professional estimates delivered within 24 hours. Contact us at zzz@gmail.com to avail our New York construction estimating services.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -40,9 +40,9 @@ const CTASection = () => {
               className="w-full sm:w-auto text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
               asChild
             >
-              <a href="tel:+12125551234">
+              <a href="mailto:zzz@gmail.com">
                 <HiPhone className="w-5 h-5" />
-                (212) 555-1234
+                Email: zzz@gmail.com
               </a>
             </Button>
           </div>

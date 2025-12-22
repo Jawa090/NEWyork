@@ -3,34 +3,34 @@ import { HiCheckCircle, HiClock, HiShieldCheck, HiUserGroup, HiDocument, HiBrief
 
 const features = [
   {
-    icon: HiDocument,
-    title: 'CSI-Based Estimates',
-    description: 'Industry-standard CSI MasterFormat organization for clear, professional documentation.',
-  },
-  {
     icon: HiClock,
-    title: 'Fast 24-48hr Turnaround',
+    title: 'Fast Turnaround Time of 24 Hours',
     description: 'Quick delivery without compromising accuracy. Rush services available.',
   },
   {
-    icon: HiShieldCheck,
-    title: 'NYC-Compliant Pricing',
-    description: 'Local market knowledge with accurate NYC labor rates and material costs.',
-  },
-  {
     icon: HiUserGroup,
-    title: 'US-Based Estimators',
-    description: 'Experienced professionals who understand American construction practices.',
+    title: '24/7 Support for Clients',
+    description: 'Round-the-clock support to help you with any questions or revisions.',
   },
   {
-    icon: HiCheckCircle,
-    title: 'Trade-Specific Takeoffs',
-    description: 'Specialized estimators for each trade ensure detailed, accurate quantities.',
+    icon: HiShieldCheck,
+    title: 'Complete Risk Management',
+    description: 'Comprehensive risk assessment and mitigation strategies for your projects.',
   },
   {
     icon: HiBriefcase,
-    title: 'Contractor & Developer Focused',
-    description: 'Tailored services designed to help you win more bids and maximize profits.',
+    title: 'Best Budget Planning',
+    description: 'Detailed cost breakdowns to help you plan and manage your project budget effectively.',
+  },
+  {
+    icon: HiDocument,
+    title: 'Clear and Transparent Reports',
+    description: 'Easy-to-read Excel format reports with detailed material lists and labor hours.',
+  },
+  {
+    icon: HiCheckCircle,
+    title: 'Customized Solutions',
+    description: 'Tailored estimating services designed to meet your specific project needs.',
   },
 ];
 
@@ -48,10 +48,10 @@ const WhyChooseUs = () => {
           >
             <span className="text-primary font-semibold text-sm tracking-wider uppercase">Why Choose Us</span>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-6">
-              New York's Trusted Construction Estimating Partner
+              Trusted Construction Estimating Services in NYC
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              With over a decade of experience serving contractors, subcontractors, and developers across New York, we've built a reputation for accuracy, reliability, and exceptional service. Our team uses industry-leading software and proven methodologies to deliver estimates you can trust.
+              For the past 20 years, we have been giving you the best New York construction estimating services. We have supported many projects from small ones to industrial developments. Our experience makes us the perfect choice for your cost analysis needs. We have a team of professionals who give detailed quantity takeoffs for your project with many reviews and trade construction estimates for accurate numbers.
             </p>
 
             {/* Features Grid */}

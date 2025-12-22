@@ -4,27 +4,27 @@ import { HiUpload, HiCalculator, HiDocumentText, HiCheckCircle } from 'react-ico
 const steps = [
   {
     icon: HiUpload,
-    title: 'Submit Your Plans',
-    description: 'Upload your drawings, specifications, and project details through our secure portal.',
+    title: 'Share your Project Plans',
+    description: 'Submit your drawings with any other supporting documents. This information helps us understand your project needs and objectives. Share your plans at zzz@gmail.com and work with our trustworthy construction estimating company.',
     details: ['Architectural drawings', 'Specifications', 'Addendums & RFIs', 'Project timeline'],
   },
   {
     icon: HiCalculator,
-    title: 'Expert Analysis',
-    description: 'Our certified estimators perform detailed quantity takeoffs using industry-leading software.',
-    details: ['CSI MasterFormat organization', 'Trade-specific takeoffs', 'Material & labor pricing', 'Local market rates'],
+    title: 'Review your Quote and Timeline',
+    description: 'Now, we will give you a quote with a clear timeline. This will have the time, scope and pricing in it. You can review this and ask questions before confirming.',
+    details: ['Clear timeline', 'Detailed scope', 'Transparent pricing', 'Question & answer session'],
   },
   {
     icon: HiDocumentText,
-    title: 'Detailed Report',
-    description: 'Receive a comprehensive estimate with itemized costs and professional documentation.',
-    details: ['Quantity takeoff sheets', 'Cost breakdown by trade', 'Material specifications', 'Labor calculations'],
+    title: 'Confirm and Process Payment',
+    description: 'When you have approved the quote, secure your complete payment. This step will start your review process on an official basis. We will take it from here while you can work on other things.',
+    details: ['Secure payment processing', 'Official project start', 'Dedicated project manager', 'Regular updates'],
   },
   {
     icon: HiCheckCircle,
-    title: 'Win More Bids',
-    description: 'Submit confident bids with accurate pricing and detailed backup documentation.',
-    details: ['Competitive advantage', 'Professional presentation', 'Backup documentation', 'Ongoing support'],
+    title: 'Receive your Detailed Report',
+    description: 'After the evaluation process, we will deliver you a report with detailed materials and price divisions. Our reports include industry standard cost values and Excel format documents.',
+    details: ['Industry standard costs', 'Excel format reports', 'Material lists', 'Marked plans'],
   },
 ];
 
@@ -42,10 +42,10 @@ const ProcessSteps = () => {
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Our Process</span>
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mt-3 mb-6">
-            How We Deliver Accurate Estimates
+            Steps to Get Your Construction Estimate
           </h2>
           <p className="text-muted-foreground text-lg">
-            Our proven 4-step process ensures you get detailed, accurate estimates that help you win more profitable projects.
+            Our streamlined process ensures you get accurate estimates quickly and efficiently with complete transparency.
           </p>
         </motion.div>
 
@@ -114,6 +114,46 @@ const ProcessSteps = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-medium">
             <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
             Start winning more bids today with our proven process.
+          </div>
+        </motion.div>
+
+        {/* Deliverables Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-20"
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-serif font-bold text-foreground mb-4">
+              Our Construction Estimating Scope & Deliverables
+            </h3>
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+              We will give you clarity with practical value at every stage. You will be able to plan and bid better when you work with us. Each value goes through a review with your drawings and task needs. Our #1 estimating company in New York uses modern tools to make detailed reports of labor and margins.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              'Industry standard cost values with real world practices',
+              'Cost reports in Excel format, which is easy to read',
+              'Full material list to help with timelines',
+              'Fast turnaround times without compromise on quality',
+              'Clear documents with exact labor hours',
+              'Marked plans for easy references'
+            ].map((deliverable, index) => (
+              <motion.div
+                key={deliverable}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border/50"
+              >
+                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <p className="text-muted-foreground text-sm">{deliverable}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>

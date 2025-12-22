@@ -1,45 +1,13 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { HiLightningBolt, HiBeaker, HiCube, HiCog, HiTemplate, HiOfficeBuilding, HiArrowRight } from 'react-icons/hi';
+import { HiArrowRight } from 'react-icons/hi';
+import { projectTypeServices, tradeServices } from '@/data/servicesData';
 
-const services = [
-  {
-    icon: HiLightningBolt,
-    title: 'Electrical Estimating Services',
-    description: 'Expert estimations for Divisions 26, 27, & 28. Lighting, power distribution, and low voltage systems.',
-    href: '/services/electrical',
-  },
-  {
-    icon: HiBeaker,
-    title: 'Plumbing Estimating Services',
-    description: 'Comprehensive Division 22 coverage including water supply, drainage, fixtures, and piping systems.',
-    href: '/services/plumbing',
-  },
-  {
-    icon: HiCog,
-    title: 'Mechanical Estimating Services',
-    description: 'Division 23 expertise. Ductwork, heating, cooling, and mechanical insulation estimates.',
-    href: '/services/mechanical',
-  },
-  {
-    icon: HiTemplate,
-    title: 'HVAC Estimating Services',
-    description: 'Detailed load calculations, equipment schedules, and ductwork takeoffs for all project types.',
-    href: '/services/hvac',
-  },
-  {
-    icon: HiCube,
-    title: 'Concrete Estimating',
-    description: 'Accurate Division 3 & 4 takeoffs. Foundations, slabs, rebar, and masonry estimates.',
-    href: '/services/concrete',
-  },
-  {
-    icon: HiOfficeBuilding,
-    title: 'Construction Cost Estimating',
-    description: 'Bid-winning cost estimates for GC\'s and developers. Labor, material, and profit analysis.',
-    href: '/services/general',
-  },
-];
+// Main Service Categories
+const mainServices = projectTypeServices;
+
+// Trade Services
+const tradeServicesData = tradeServices;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -70,47 +38,98 @@ const ServicesOverview = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-primary font-semibold text-sm tracking-wider uppercase">Our Services</span>
+          <span className="text-primary font-semibold text-sm tracking-wider uppercase">Construction Cost Estimating Services</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
-            Trade-Specific Estimating Services
+            Professional Construction Takeoff Services in New York
           </h2>
           <p className="text-muted-foreground">
-            We provide detailed, accurate cost estimates for all major construction trades. Our CSI-based approach ensures consistency and reliability.
+            Construction takeoffs are important to control costs and plan resources. It also helps you complete tasks on time. In the competitive market, we cannot afford even small errors. That's why we prepare a full material list with needed expertise and measure all material and labor hours for best results.
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {services.map((service) => (
-            <motion.div key={service.title} variants={itemVariants}>
-              <Link
-                to={service.href}
-                className="group block h-full p-8 bg-card rounded-2xl border border-border/50 hover-lift hover:border-primary/30 transition-all duration-300"
-              >
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <h3 className="text-xl font-serif font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {service.description}
-                </p>
-                <span className="inline-flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn More <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Main Service Categories */}
+        <div className="mb-20">
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl font-serif font-bold text-foreground mb-8 text-center"
+          >
+            Project Type Estimating
+          </motion.h3>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            {mainServices.map((service) => (
+              <motion.div key={service.title} variants={itemVariants}>
+                <Link
+                  to={`/services/${service.slug}`}
+                  className="group block h-full p-8 bg-card rounded-2xl border border-border/50 hover-lift hover:border-primary/30 transition-all duration-300"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                    <service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-serif font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Learn More <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Trade Services */}
+        <div>
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl font-serif font-bold text-foreground mb-8 text-center"
+          >
+            Trade Estimating and Takeoff Services
+          </motion.h3>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {tradeServicesData.map((service) => (
+              <motion.div key={service.title} variants={itemVariants}>
+                <Link
+                  to={`/services/${service.slug}`}
+                  className="group block h-full p-6 bg-card rounded-2xl border border-border/50 hover-lift hover:border-primary/30 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                    <service.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                  </div>
+                  <h3 className="text-lg font-serif font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Learn More <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
 
         {/* CTA */}
         <motion.div

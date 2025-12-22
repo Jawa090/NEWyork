@@ -40,12 +40,12 @@ const Testimonials = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="text-primary font-semibold text-sm tracking-wider uppercase">Client Success</span>
+          <span className="text-primary font-semibold text-sm tracking-wider uppercase">Client Reviews</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
             What Our Clients Say
           </h2>
           <p className="text-muted-foreground">
-            Don't just take our word for it. Here's what contractors and developers across New York are saying about our services.
+            Don't just take our word for it. Here's what contractors and developers across New York are saying about our construction estimating services.
           </p>
         </motion.div>
 
@@ -116,7 +116,7 @@ const Testimonials = () => {
               <p className="text-sm text-muted-foreground">Projects Completed</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-bold text-foreground">10+</p>
+              <p className="text-2xl font-bold text-foreground">20+</p>
               <p className="text-sm text-muted-foreground">Years Experience</p>
             </div>
           </div>
