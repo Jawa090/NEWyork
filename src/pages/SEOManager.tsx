@@ -439,24 +439,24 @@ export default function SEOManager() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <Label>Title (Max 60 characters)</Label>
+              <Label>Title (Max 70 characters)</Label>
               <Input 
                 value={seoData.title} 
                 onChange={(e) => setSeoData({ ...seoData, title: e.target.value })} 
-                maxLength={60}
+                maxLength={70}
               />
-              <span className="text-xs text-gray-500">{seoData.title.length}/60</span>
+              <span className="text-xs text-gray-500">{seoData.title.length}/70</span>
             </div>
 
             <div className="space-y-2">
-              <Label>Description (Max 160 characters)</Label>
+              <Label>Description (Max 170 characters)</Label>
               <Textarea 
                 value={seoData.description} 
                 onChange={(e) => setSeoData({ ...seoData, description: e.target.value })} 
-                maxLength={160}
+                maxLength={170}
                 rows={3}
               />
-              <span className="text-xs text-gray-500">{seoData.description.length}/160</span>
+              <span className="text-xs text-gray-500">{seoData.description.length}/170</span>
             </div>
 
             <div className="space-y-2">
