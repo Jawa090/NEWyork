@@ -69,14 +69,14 @@ const TopNav = () => {
           </div>
 
           {/* Right - Timer */}
-          <div className="flex items-center gap-2 bg-red-500/20 px-4 py-2 rounded-full border border-red-300/30">
-            <HiClock className="w-4 h-4 text-red-200" />
-            <span className="text-xs font-medium text-red-100">ENDS IN:</span>
-            <div className="flex items-center gap-1 font-mono font-bold text-xs text-red-100">
-              <span className="bg-red-500/40 px-2 py-1 rounded">{String(timeLeft.days).padStart(2, '0')}d</span>
-              <span className="bg-red-500/40 px-2 py-1 rounded">{String(timeLeft.hours).padStart(2, '0')}h</span>
-              <span className="bg-red-500/40 px-2 py-1 rounded">{String(timeLeft.minutes).padStart(2, '0')}m</span>
-              <span className="bg-red-500/40 px-2 py-1 rounded">{String(timeLeft.seconds).padStart(2, '0')}s</span>
+          <div className="flex items-center gap-2 bg-primary-foreground/20 px-4 py-2 rounded-full border border-primary-foreground/30">
+            <HiClock className="w-4 h-4 text-primary-foreground/80" />
+            <span className="text-xs font-medium text-primary-foreground/90">ENDS IN:</span>
+            <div className="flex items-center gap-1 font-mono font-bold text-xs text-primary-foreground">
+              <span className="bg-primary-foreground/30 px-2 py-1 rounded">{String(timeLeft.days).padStart(2, '0')}d</span>
+              <span className="bg-primary-foreground/30 px-2 py-1 rounded">{String(timeLeft.hours).padStart(2, '0')}h</span>
+              <span className="bg-primary-foreground/30 px-2 py-1 rounded">{String(timeLeft.minutes).padStart(2, '0')}m</span>
+              <span className="bg-primary-foreground/30 px-2 py-1 rounded">{String(timeLeft.seconds).padStart(2, '0')}s</span>
             </div>
           </div>
         </div>

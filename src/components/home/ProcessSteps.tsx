@@ -30,7 +30,7 @@ const steps = [
 
 const ProcessSteps = () => {
   return (
-    <section className="section-padding bg-background overflow-hidden">
+    <section className="-mt-16 md:-mt-24 lg:-mt-32 pb-16 md:pb-20 lg:pb-24 bg-primary/6 overflow-hidden">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -123,12 +123,12 @@ const ProcessSteps = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-16"
+          className="mt-16 p-8 bg-primary/15 rounded-2xl border border-primary/20"
         >
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-serif font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
               Our Construction Estimating Scope & Deliverables
-            </h3>
+            </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
               We will give you clarity with practical value at every stage. You will be able to plan and bid better when you work with us. Each value goes through a review with your drawings and task needs. Our #1 estimating company in New York uses modern tools to make detailed reports of labor and margins.
             </p>

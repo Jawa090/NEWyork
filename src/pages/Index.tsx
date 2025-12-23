@@ -11,7 +11,6 @@ import ClientTypes from '@/components/home/ClientTypes';
 import RecentProjects from '@/components/home/RecentProjects';
 import Testimonials from '@/components/home/Testimonials';
 import FAQ from '@/components/home/FAQ';
-import CTASection from '@/components/home/CTASection';
 
 const Index = () => {
   return (
@@ -30,7 +29,6 @@ const Index = () => {
         <RecentProjects />
         <Testimonials />
         <FAQ />
-        <CTASection />
       </main>
       <Footer />
     </>

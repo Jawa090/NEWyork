@@ -45,7 +45,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="section-padding bg-background">
+    <section className="-mt-16 md:-mt-24 lg:-mt-32 pb-16 md:pb-20 lg:pb-24 bg-primary/5">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div

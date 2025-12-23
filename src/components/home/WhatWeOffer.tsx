@@ -36,7 +36,7 @@ const offerings = [
 
 const WhatWeOffer = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="-mt-16 md:-mt-24 lg:-mt-32 pb-16 md:pb-20 lg:pb-24 bg-primary/8">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -44,7 +44,7 @@ const WhatWeOffer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-12"
+          className="text-center max-w-3xl mx-auto mb-12 p-6 bg-primary/15 rounded-2xl border border-primary/20"
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">What We Offer</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
@@ -64,7 +64,7 @@ const WhatWeOffer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group p-8 bg-card rounded-2xl border border-border/50 hover-lift hover:border-primary/30 transition-all duration-300"
+              className="group p-8 bg-primary/15 rounded-2xl border border-primary/20 hover-lift hover:border-primary/30 transition-all duration-300"
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                 <offering.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
@@ -85,7 +85,7 @@ const WhatWeOffer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-12 text-center p-8 bg-primary/5 rounded-2xl border border-primary/10"
+          className="mt-12 text-center p-8 bg-primary/15 rounded-2xl border border-primary/20"
         >
           <h3 className="text-xl font-serif font-semibold text-foreground mb-4">
             Comprehensive Takeoff Services

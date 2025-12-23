@@ -38,7 +38,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="section-padding bg-grey-cool">
+    <section className="-mt-16 md:-mt-24 lg:-mt-32 pb-16 md:pb-20 lg:pb-24 bg-primary/7">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -87,7 +87,7 @@ const WhyChooseUs = () => {
             >
               <Button variant="default" size="lg" className="group" asChild>
                 <Link to="/about">
-                  Learn More About Us
+                  About Us
                   <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>

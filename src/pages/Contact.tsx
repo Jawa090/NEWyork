@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: HiMail,
     title: 'Email',
-    value: 'info@nyestimators.com',
-    href: 'mailto:info@nyestimators.com',
+    value: 'zzz@gmail.com',
+    href: 'mailto:zzz@gmail.com',
   },
   {
     icon: HiLocationMarker,
@@ -116,44 +116,6 @@ const Contact = () => {
                 Have a question or need a precise material takeoff? Our expert team is ready to help you win your next bid. Reach out today for a free consultation.
               </p>
             </motion.div>
-          </div>
-        </section>
-
-        {/* Why Contact Us */}
-        <section className="section-padding bg-background">
-          <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center max-w-3xl mx-auto mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
-                Why Contact Us?
-              </h2>
-              <p className="text-muted-foreground">
-                We value your time. When you reach out to New York Estimating, you can expect:
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-              {whyContactUs.map((reason, index) => (
-                <motion.div
-                  key={reason.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-6 bg-card rounded-xl border border-border/50 text-center hover-lift"
-                >
-                  <div className="w-12 h-12 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <reason.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">{reason.title}</h3>
-                  <p className="text-muted-foreground text-sm">{reason.description}</p>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -304,6 +266,44 @@ const Contact = () => {
                   </div>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Contact Us */}
+        <section className="section-padding bg-primary/8">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center max-w-3xl mx-auto mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+                Why Contact Us?
+              </h2>
+              <p className="text-muted-foreground">
+                We value your time. When you reach out to New York Estimating, you can expect:
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {whyContactUs.map((reason, index) => (
+                <motion.div
+                  key={reason.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 bg-card rounded-xl border border-border/50 text-center hover-lift"
+                >
+                  <div className="w-12 h-12 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <reason.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">{reason.title}</h3>
+                  <p className="text-muted-foreground text-sm">{reason.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

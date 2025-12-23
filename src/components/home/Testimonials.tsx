@@ -30,7 +30,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="section-padding bg-grey-cool">
+    <section className="-mt-16 md:-mt-24 lg:-mt-32 pb-16 md:pb-20 lg:pb-24 bg-grey-cool">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -38,7 +38,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-12"
+          className="text-center max-w-2xl mx-auto mb-12 p-6 bg-primary/15 rounded-2xl border border-primary/20"
         >
           <span className="text-primary font-semibold text-sm tracking-wider uppercase">Client Reviews</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
@@ -58,7 +58,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card p-8 rounded-2xl border border-border/50 hover:border-primary/30 hover:shadow-medium transition-all duration-300"
+              className="bg-primary/15 p-8 rounded-2xl border border-primary/20 hover:border-primary/30 hover:shadow-medium transition-all duration-300"
             >
               {/* Rating */}
               <div className="flex items-center gap-1 mb-4">
@@ -102,7 +102,7 @@ const Testimonials = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-60">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center p-8 bg-primary/15 rounded-2xl border border-primary/20">
             <div className="text-center">
               <p className="text-2xl font-bold text-foreground">4.9/5</p>
               <p className="text-sm text-muted-foreground">Average Rating</p>
