@@ -38,7 +38,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="-mt-16 md:-mt-24 lg:-mt-32 pb-16 md:pb-20 lg:pb-24 bg-primary/7">
+    <section className="-mt-20 md:-mt-24 lg:-mt-28 pb-16 md:pb-20 lg:pb-24 bg-primary/7">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -53,7 +53,7 @@ const WhyChooseUs = () => {
               Why Choose Our Expert Team
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              For the past 20 years, we have been giving you the best New York construction estimating services. We have supported many projects from small ones to industrial developments. Our experience makes us the perfect choice for your cost analysis needs. We have a team of professionals who give detailed quantity takeoffs for your project with many reviews and trade construction estimates for accurate numbers.
+              For 20+ years, we've delivered top-quality New York construction estimating services across projects of all sizes. Our experienced team provides detailed quantity takeoffs and accurate trade estimates to support your project success.
             </p>
 
             {/* Features Grid */}

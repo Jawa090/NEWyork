@@ -18,17 +18,21 @@ const Index = () => {
       <SEOHead />
       
       <Navbar />
-      <main className="space-y-8 md:space-y-12 lg:space-y-16">
-        <Hero />
+      <main>
+        <div className="space-y-8 md:space-y-12 lg:space-y-16">
+          <Hero />
+        </div>
         <ServicesOverview />
         <WhyChooseUs />
-        <WhatWeOffer />
-        <ProcessSteps />
-        <Industries />
-        <ClientTypes />
-        <RecentProjects />
-        <Testimonials />
-        <FAQ />
+        <div className="space-y-8 md:space-y-12 lg:space-y-16">
+          <WhatWeOffer />
+          <ProcessSteps />
+          <Industries />
+          <ClientTypes />
+          <RecentProjects />
+          <Testimonials />
+          <FAQ />
+        </div>
       </main>
       <Footer />
     </>

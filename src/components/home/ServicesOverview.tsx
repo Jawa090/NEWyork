@@ -31,7 +31,7 @@ const itemVariants = {
 
 const ServicesOverview = () => {
   return (
-    <section className="pb-16 md:pb-20 lg:pb-24 bg-background">
+    <section className="pb-0 bg-background">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -56,7 +56,7 @@ const ServicesOverview = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-serif font-bold text-foreground mb-8 text-center"
+            className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-8 text-center"
           >
             Project Type Estimating
           </motion.h3>
@@ -94,7 +94,7 @@ const ServicesOverview = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-serif font-bold text-foreground mb-8 text-center"
+            className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-8 text-center"
           >
             Trade Estimating and Takeoff Services
           </motion.h3>
