@@ -102,6 +102,36 @@ const WhatWeOffer = () => {
             </a>
           </div>
         </motion.div>
+
+        {/* Upload Plans Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="mt-12 text-center p-8 bg-card rounded-2xl border border-border/50"
+        >
+          <div className="max-w-2xl mx-auto">
+            <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+              <HiDocumentText className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="text-2xl font-serif font-semibold text-foreground mb-4">
+              Ready to Get Started?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Upload your plans and get accurate estimates with the latest software. Our team will provide guidance at every stage and ensure the same quality in all numbers we deliver.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="mailto:zzz@gmail.com"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors text-lg"
+              >
+                <HiDocumentText className="w-5 h-5" />
+                Upload Plans & Get Quote
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

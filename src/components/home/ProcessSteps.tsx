@@ -129,8 +129,11 @@ const ProcessSteps = () => {
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
               Our Construction Estimating Scope & Deliverables
             </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto mb-4">
+              We will give you clarity with practical value at every stage. You will be able to plan and bid better when you work with us. Each value goes through a review with your drawings and task needs. This calculation approach aligns your goals and timelines. Our #1 estimating company in New York uses modern tools to make detailed reports of labor and margins.
+            </p>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              We will give you clarity with practical value at every stage. You will be able to plan and bid better when you work with us. Each value goes through a review with your drawings and task needs. Our #1 estimating company in New York uses modern tools to make detailed reports of labor and margins.
+              Every number helps you make better decisions for smooth processes. Below is the list of what you will receive:
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">

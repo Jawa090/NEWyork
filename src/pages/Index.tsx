@@ -2,6 +2,8 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import SEOHead from '@/components/SEOHead';
 import Hero from '@/components/home/Hero';
+import TrustedServices from '@/components/home/TrustedServices';
+import ProfessionalTakeoff from '@/components/home/ProfessionalTakeoff';
 import ServicesOverview from '@/components/home/ServicesOverview';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import WhatWeOffer from '@/components/home/WhatWeOffer';
@@ -20,6 +22,8 @@ const Index = () => {
       <Navbar />
       <main className="space-y-8 md:space-y-12 lg:space-y-16">
         <Hero />
+        <TrustedServices />
+        <ProfessionalTakeoff />
         <ServicesOverview />
         <WhyChooseUs />
         <WhatWeOffer />
