@@ -38,7 +38,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="-mt-20 md:-mt-24 lg:-mt-28 pb-16 md:pb-20 lg:pb-24 bg-primary/7">
+    <section className="-mt-12 md:-mt-16 lg:-mt-20 pb-16 md:pb-20 lg:pb-24 bg-primary/7">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}

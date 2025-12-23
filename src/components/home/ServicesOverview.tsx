@@ -31,7 +31,7 @@ const itemVariants = {
 
 const ServicesOverview = () => {
   return (
-    <section className="pb-0 bg-background">
+    <section className="pb-4 md:pb-6 lg:pb-8 bg-background">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
