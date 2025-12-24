@@ -113,7 +113,7 @@ const Contact = () => {
                 Contact New York Estimating | Accurate Construction Estimating Services
               </h1>
               <p className="text-lg text-primary-foreground/80">
-                Have a question or need a precise material takeoff? Our expert team is ready to help you win your next bid. Reach out today for a free consultation.
+                Have a question or need a precise material takeoff? Our expert team is ready to help you win your next bid. Reach out today for a free consultation and accurate estimates.
               </p>
             </motion.div>
           </div>
