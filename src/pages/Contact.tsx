@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: HiMail,
     title: 'Email',
-    value: 'zzz@gmail.com',
-    href: 'mailto:zzz@gmail.com',
+    value: 'info@constructionestimatingnewyork.com',
+    href: 'mailto:info@constructionestimatingnewyork.com',
   },
   {
     icon: HiLocationMarker,
@@ -224,14 +224,14 @@ const Contact = () => {
                       <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <item.icon className="w-6 h-6 text-primary" />
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
                         {item.href ? (
-                          <a href={item.href} className="text-muted-foreground hover:text-primary transition-colors font-medium">
+                          <a href={item.href} className="text-muted-foreground hover:text-primary transition-colors font-medium break-all text-sm">
                             {item.value}
                           </a>
                         ) : (
-                          <p className="text-muted-foreground">{item.value}</p>
+                          <p className="text-muted-foreground break-words text-sm">{item.value}</p>
                         )}
                       </div>
                     </div>

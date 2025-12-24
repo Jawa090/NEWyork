@@ -1,36 +1,36 @@
 import { motion } from 'framer-motion';
-import { HiOfficeBuilding, HiUsers, HiLibrary, HiPencilAlt, HiCalculator, HiHome } from 'react-icons/hi';
+import { HiCog, HiDatabase, HiDocumentText, HiLocationMarker, HiTemplate, HiChip } from 'react-icons/hi';
 
-const industries = [
+const software = [
   {
-    icon: HiOfficeBuilding,
-    title: 'Contractors',
-    description: 'General and specialty contractors seeking accurate bid support.',
+    icon: HiCog,
+    title: 'PlanSwift',
+    description: 'Digital quantity takeoffs and measurements',
   },
   {
-    icon: HiUsers,
-    title: 'Subcontractors',
-    description: 'Trade-specific subcontractors needing detailed material takeoffs.',
+    icon: HiDatabase,
+    title: 'RSMeans',
+    description: 'Reliable and up-to-date cost data',
   },
   {
-    icon: HiLibrary,
-    title: 'Developers',
-    description: 'Real estate developers requiring feasibility and budget estimates.',
+    icon: HiDocumentText,
+    title: 'BlueBeam',
+    description: 'Advanced plan review and markups',
   },
   {
-    icon: HiPencilAlt,
-    title: 'Architects',
-    description: 'Design firms needing cost analysis during the design phase.',
+    icon: HiLocationMarker,
+    title: 'Trimble',
+    description: 'Precision tool for construction data and workflow',
   },
   {
-    icon: HiCalculator,
-    title: 'Engineers',
-    description: 'Engineering firms requiring MEP and structural estimates.',
+    icon: HiTemplate,
+    title: 'FastPipe',
+    description: 'Plumbing and Piping Estimate',
   },
   {
-    icon: HiHome,
-    title: 'Home Builders',
-    description: 'Residential builders needing detailed construction cost breakdowns.',
+    icon: HiChip,
+    title: 'FastDuct',
+    description: 'HVAC ductwork Estimating',
   },
 ];
 
@@ -65,16 +65,16 @@ const Industries = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <span className="text-primary font-semibold text-sm tracking-wider uppercase">Who We Serve</span>
+          <span className="text-primary font-semibold text-sm tracking-wider uppercase">Software We Use</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
-            Construction Industry Sectors We Support
+            Advanced Technology & Tools
           </h2>
           <p className="text-muted-foreground">
-            From small residential projects to large commercial developments, we provide estimating services tailored to your industry needs.
+            To ensure accuracy and consistency, we rely on the latest technology and tools. We use tools for cost analysis as well as bidding. Here are a few programs we use:
           </p>
         </motion.div>
 
-        {/* Industries Grid */}
+        {/* Software Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -82,20 +82,20 @@ const Industries = () => {
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
         >
-          {industries.map((industry) => (
+          {software.map((tool) => (
             <motion.div
-              key={industry.title}
+              key={tool.title}
               variants={itemVariants}
               className="group p-6 bg-card rounded-xl border border-border/50 text-center hover:border-primary/30 hover:shadow-medium transition-all duration-300 cursor-default"
             >
               <div className="w-14 h-14 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <industry.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                <tool.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                {industry.title}
+                {tool.title}
               </h3>
               <p className="text-muted-foreground text-xs leading-relaxed">
-                {industry.description}
+                {tool.description}
               </p>
             </motion.div>
           ))}

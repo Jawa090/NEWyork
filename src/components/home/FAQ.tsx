@@ -138,10 +138,10 @@ const FAQ = () => {
               Call (212) 555-1234
             </a>
             <a
-              href="mailto:zzz@gmail.com"
+              href="mailto:info@constructionestimatingnewyork.com"
               className="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
             >
-              Email Us at zzz@gmail.com
+              Email Us at info@constructionestimatingnewyork.com
             </a>
           </div>
         </motion.div>

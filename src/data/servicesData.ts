@@ -120,7 +120,7 @@ export const tradeServices: Service[] = [
         icon: HiOfficeBuilding,
         slug: 'masonry',
         title: 'Masonry Estimating Services',
-        description: 'These services handle all the quantities of brickwork and other material. We will give you clear values with which you can plan labor and equipment. With careful review of drawings, our numbers are very accurate. Hence, you will have a smooth construction with little chances of cost shortage. Contact us at zzz@gmail.com to avail our New York construction estimating services.',
+        description: 'These services handle all the quantities of brickwork and other material. We will give you clear values with which you can plan labor and equipment. With careful review of drawings, our numbers are very accurate. Hence, you will have a smooth construction with little chances of cost shortage. Contact us at info@constructionestimatingnewyork.com to avail our New York construction estimating services.',
         features: ['Brick Veneer', 'Block Work', 'Stone Installation', 'Mortar & Grout', 'Restoration'],
         image: '/images/service-masonry.png',
         category: 'trade-specific',

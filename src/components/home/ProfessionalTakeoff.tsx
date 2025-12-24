@@ -144,10 +144,10 @@ const ProfessionalTakeoff = () => {
               <div className="text-center p-6 bg-card rounded-xl border border-border/50">
                 <p className="text-sm text-muted-foreground mb-2">Contact us directly:</p>
                 <a
-                  href="mailto:zzz@gmail.com"
+                  href="mailto:info@constructionestimatingnewyork.com"
                   className="text-primary font-semibold hover:text-primary/80 transition-colors"
                 >
-                  zzz@gmail.com
+                  info@constructionestimatingnewyork.com
                 </a>
               </div>
 

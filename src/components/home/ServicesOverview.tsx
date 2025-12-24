@@ -46,7 +46,7 @@ const ServicesOverview = () => {
             Comprehensive Construction Estimating Solutions
           </h2>
           <p className="text-muted-foreground">
-            Construction takeoffs are important to control costs and plan resources. It also helps you complete tasks on time. In the competitive market, we cannot afford even small errors. That's why we prepare a full material list with needed expertise and measure all material and labor hours for best results.
+            We deliver construction estimating services to support projects of all scopes and sizes. We plan early budgets as well as final bid preparation. Our experts will give you reliable cost insights for better plans and bidding.
           </p>
         </motion.div>
 

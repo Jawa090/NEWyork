@@ -43,20 +43,12 @@ const TopNav = () => {
       
       <div className="container-custom relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-3">
-          {/* Left - Contact Info */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 lg:gap-6">
-            <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
-              <HiPhone className="w-4 h-4 text-yellow-300" />
-              <a href="tel:+17187196171" className="font-medium hover:text-yellow-200 transition-colors">
-                Call: (718) 719-6171
-              </a>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
-              <HiMail className="w-4 h-4 text-yellow-300" />
-              <a href="mailto:zzz@gmail.com" className="font-medium hover:text-yellow-200 transition-colors">
-                zzz@gmail.com
-              </a>
-            </div>
+          {/* Left - Email */}
+          <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
+            <HiMail className="w-4 h-4 text-yellow-300" />
+            <a href="mailto:info@constructionestimatingnewyork.com" className="font-medium hover:text-yellow-200 transition-colors">
+              info@constructionestimatingnewyork.com
+            </a>
           </div>
 
           {/* Center - Offer Message */}

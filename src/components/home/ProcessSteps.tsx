@@ -5,7 +5,7 @@ const steps = [
   {
     icon: HiUpload,
     title: 'Share your Project Plans',
-    description: 'Submit your drawings with any other supporting documents. This information helps us understand your project needs and objectives. Share your plans at zzz@gmail.com and work with our trustworthy construction estimating company.',
+    description: 'Submit your drawings with any other supporting documents. This information helps us understand your project needs and objectives. Share your plans at info@constructionestimatingnewyork.com and work with our trustworthy construction estimating company.',
     details: ['Architectural drawings', 'Specifications', 'Addendums & RFIs', 'Project timeline'],
   },
   {
