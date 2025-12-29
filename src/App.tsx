@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { useDynamicRedirects } from "./components/DynamicRedirects";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -21,7 +20,6 @@ import SEOManager from "./pages/SEOManager";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const dynamicRedirects = useDynamicRedirects();
 
   return (
     <HelmetProvider>
@@ -42,15 +40,15 @@ const App = () => {
               <Route path="/trade" element={<Trade />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
-              
+
               {/* SEO Manager - Development Only */}
               {import.meta.env.DEV && (
                 <Route path="/seo-manager" element={<SEOManager />} />
               )}
-              
+
               {/* Add dynamic redirects */}
-              {dynamicRedirects}
-              
+            
+
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
