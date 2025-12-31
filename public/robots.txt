@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://constructionestimatingnewyork.com/sitemap_index.xml
+Sitemap: https://constructionestimatingnewyork.com/sitemap
