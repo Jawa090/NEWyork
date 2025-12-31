@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { useDynamicRedirects } from "./components/DynamicRedirects";
 import HttpsRedirect from "./components/HttpsRedirect";
-import GlobalSEO from "./components/GlobalSEO";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
