@@ -219,12 +219,49 @@ export const wordpressService = {
             ...rankMath,
         };
 
-        // 3. Sanitize Canonical URL (Remove 'cms.' subdomain to match frontend)
+        // 3. Sanitize Canonical URL
         if (mergedData.canonicalUrl) {
-            // Regex matches "http://cms." or "https://cms." and removes "cms."
-            mergedData.canonicalUrl = mergedData.canonicalUrl.replace(/^(https?:\/\/)(cms\.)/i, '$1');
+            mergedData.canonicalUrl = wordpressService.cleanCanonicalUrl(mergedData.canonicalUrl);
         }
 
         return mergedData;
+    },
+
+    /**
+     * Clean canonical URL:
+     * 1. If in DEV mode, replace domain with window.location.origin (localhost).
+     * 2. Remove 'cms.' subdomain to match frontend (Prod).
+     * 3. Remove trailing slashes.
+     */
+    cleanCanonicalUrl: (url: string): string => {
+        if (!url) return '';
+
+        let cleanUrl = url;
+
+        // In Development, use localhost
+        if (import.meta.env.DEV && typeof window !== 'undefined') {
+            try {
+                const urlObj = new URL(url);
+                cleanUrl = `${window.location.origin}${urlObj.pathname}`;
+            } catch (e) {
+                // Fallback if url is invalid, though unlikely from WP
+                console.warn('[WP Service] Invalid canonical URL:', url);
+            }
+        } else {
+            // In Production, remove 'cms.' subdomain
+            cleanUrl = cleanUrl.replace(/^(https?:\/\/)(cms\.)/i, '$1');
+        }
+
+        // Remove trailing slash
+        if (cleanUrl.endsWith('/')) {
+            cleanUrl = cleanUrl.slice(0, -1);
+        }
+
+        // Special handling for Home page: remove '/home' from the end
+        if (cleanUrl.endsWith('/home')) {
+            cleanUrl = cleanUrl.slice(0, -5);
+        }
+
+        return cleanUrl;
     }
 };

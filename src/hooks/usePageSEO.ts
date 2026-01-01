@@ -32,9 +32,12 @@ export const usePageSEO = (
             setError(null);
 
             try {
+                // Normalize slug: React uses '/' for home, WP uses 'home'
+                const wpSlug = (slug === '/' || slug === '') ? 'home' : slug;
+
                 const content = type === 'page'
-                    ? await wordpressService.getPageBySlug(slug)
-                    : await wordpressService.getPostBySlug(slug);
+                    ? await wordpressService.getPageBySlug(wpSlug)
+                    : await wordpressService.getPostBySlug(wpSlug);
 
                 if (content) {
                     const data = wordpressService.getSeoData(content);
