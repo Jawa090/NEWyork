@@ -31,9 +31,20 @@ const RedirectHandler = () => {
             targetHost = currentHost.replace(/^www\./, '');
         }
 
+        // Check for trailing slash (exclude home and files with extensions)
+        let targetPath = currentPath;
+        const pathname = window.location.pathname;
+        if (pathname !== '/' && !pathname.endsWith('/') && !pathname.split('/').pop()?.includes('.')) {
+            shouldRedirect = true;
+            // Reconstruct the path with a trailing slash
+            const search = window.location.search;
+            const hash = window.location.hash;
+            targetPath = pathname + '/' + search + hash;
+        }
+
         // Perform redirect if needed
         if (shouldRedirect) {
-            const newUrl = `${targetProtocol}//${targetHost}${currentPath}`;
+            const newUrl = `${targetProtocol}//${targetHost}${targetPath}`;
             console.log(`[RedirectHandler] Redirecting from ${currentUrl} to ${newUrl}`);
             window.location.replace(newUrl);
         }

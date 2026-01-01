@@ -86,7 +86,7 @@ const WhyChooseUs = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <Button variant="default" size="lg" className="group" asChild>
-                <Link to="/about">
+                <Link to="/about/">
                   Learn More About Us
                   <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>

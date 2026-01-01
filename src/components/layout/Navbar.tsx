@@ -16,14 +16,14 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { name: 'Home', href: '/' },
-  // { name: 'Services', href: '/services', hasDropdown: true, dropdownType: 'services' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Pricing', href: '/pricing' },
-  // { name: 'Sample Estimates', href: '/samples' },
-  // { name: 'Locations', href: '/locations' },
-  // { name: 'Trade', href: '/trade', hasDropdown: true, dropdownType: 'trades' },
-  // { name: 'Blog', href: '/blog' },
-  { name: 'Contact Us', href: '/contact' },
+  // { name: 'Services', href: '/services/', hasDropdown: true, dropdownType: 'services' },
+  { name: 'About Us', href: '/about/' },
+  { name: 'Pricing', href: '/pricing/' },
+  // { name: 'Sample Estimates', href: '/samples/' },
+  // { name: 'Locations', href: '/locations/' },
+  // { name: 'Trade', href: '/trade/', hasDropdown: true, dropdownType: 'trades' },
+  // { name: 'Blog', href: '/blog/' },
+  { name: 'Contact Us', href: '/contact/' },
 ];
 
 const Navbar = () => {
@@ -113,7 +113,7 @@ const Navbar = () => {
                                     ? projectTypeServices.map((service) => (
                                       <Link
                                         key={service.slug}
-                                        to={`/services/${service.slug}`}
+                                        to={`/services/${service.slug}/`}
                                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors group"
                                       >
                                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -132,7 +132,7 @@ const Navbar = () => {
                                     : trades.map((trade) => (
                                       <Link
                                         key={trade.slug}
-                                        to={`/trade/${trade.slug}`}
+                                        to={`/trade/${trade.slug}/`}
                                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors group"
                                       >
                                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -181,7 +181,7 @@ const Navbar = () => {
             {/* CTA Button */}
             <div className="hidden lg:flex items-center gap-4">
               <Button variant="cta" size="lg" asChild>
-                <Link to="/contact">Get Free Quote</Link>
+                <Link to="/contact/">Get Free Quote</Link>
               </Button>
             </div>
 
@@ -234,7 +234,7 @@ const Navbar = () => {
                                     ? projectTypeServices.map((service) => (
                                       <Link
                                         key={service.slug}
-                                        to={`/services/${service.slug}`}
+                                        to={`/services/${service.slug}/`}
                                         className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                                       >
                                         {service.title}
@@ -243,7 +243,7 @@ const Navbar = () => {
                                     : trades.map((trade) => (
                                       <Link
                                         key={trade.slug}
-                                        to={`/trade/${trade.slug}`}
+                                        to={`/trade/${trade.slug}/`}
                                         className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
                                       >
                                         {trade.title}
@@ -269,7 +269,7 @@ const Navbar = () => {
                   ))}
                   <div className="pt-4">
                     <Button variant="cta" size="lg" className="w-full" asChild>
-                      <Link to="/contact">Get Free Quote</Link>
+                      <Link to="/contact/">Get Free Quote</Link>
                     </Button>
                   </div>
                 </div>

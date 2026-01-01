@@ -70,7 +70,7 @@ const ServicesOverview = () => {
             {mainServices.map((service) => (
               <motion.div key={service.title} variants={itemVariants}>
                 <Link
-                  to={`/services/${service.slug}`}
+                  to={`/services/${service.slug}/`}
                   className="group block h-full p-8 bg-card rounded-2xl border border-border/50 hover-lift hover:border-primary/30 transition-all duration-300"
                 >
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
@@ -108,7 +108,7 @@ const ServicesOverview = () => {
             {tradeServicesData.map((service) => (
               <motion.div key={service.title} variants={itemVariants}>
                 <Link
-                  to={`/services/${service.slug}`}
+                  to={`/services/${service.slug}/`}
                   className="group block h-full p-6 bg-card rounded-2xl border border-border/50 hover-lift hover:border-primary/30 transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
@@ -135,7 +135,7 @@ const ServicesOverview = () => {
           className="text-center mt-12"
         >
           <Button variant="cta" size="xl" className="group" asChild>
-            <Link to="/contact">
+            <Link to="/contact/">
               Get 20% OFF - Contact Us Now!
               <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>

@@ -152,13 +152,13 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <Button variant="cta" size="xl" className="w-full sm:w-auto group" asChild>
-              <Link to="/contact">
+              <Link to="/contact/">
                 Get a Free Quote
                 <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button variant="heroOutline" size="xl" className="w-full sm:w-auto group" asChild>
-              <Link to="/samples">
+              <Link to="/samples/">
                 <HiDocumentText className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 View Sample Estimates
               </Link>

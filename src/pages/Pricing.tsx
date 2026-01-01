@@ -195,7 +195,7 @@ const Pricing = () => {
                   </a>
                 </Button>
                 <Button variant="heroOutline" size="xl" className="group" asChild>
-                  <Link to="/contact">
+                  <Link to="/contact/">
                     <HiCalendar className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     Schedule a Meeting
                   </Link>
@@ -404,7 +404,7 @@ const Pricing = () => {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button variant="heroOutline" size="xl" asChild>
-                  <a href="/contact">Get a Quick Price Quote</a>
+                  <a href="/contact/">Get a Quick Price Quote</a>
                 </Button>
                 <Button variant="heroOutline" size="xl" asChild>
                   <a href="tel:+17187196171">Book a Consultation Call</a>

@@ -37,23 +37,23 @@ const App = () => {
             <HttpsRedirect />
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/services/:slug" element={<Services />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/quote" element={<Quote />} />
-              <Route path="/samples" element={<Samples />} />
-              <Route path="/locations" element={<Locations />} />
-              <Route path="/trade" element={<Trade />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/sitemap" element={<Sitemap />} />
+              <Route path="/about/" element={<About />} />
+              <Route path="/services/" element={<Services />} />
+              <Route path="/services/:slug/" element={<Services />} />
+              <Route path="/pricing/" element={<Pricing />} />
+              <Route path="/quote/" element={<Quote />} />
+              <Route path="/samples/" element={<Samples />} />
+              <Route path="/locations/" element={<Locations />} />
+              <Route path="/trade/" element={<Trade />} />
+              <Route path="/blog/" element={<Blog />} />
+              <Route path="/blog/:slug/" element={<BlogPost />} />
+              <Route path="/contact/" element={<Contact />} />
+              <Route path="/sitemap/" element={<Sitemap />} />
               <Route path="/sitemap.xml" element={<DynamicSitemapXml />} />
 
               {/* SEO Manager - Development Only */}
               {import.meta.env.DEV && (
-                <Route path="/seo-manager" element={<SEOManager />} />
+                <Route path="/seo-manager/" element={<SEOManager />} />
               )}
 
               {/* Add dynamic redirects */}

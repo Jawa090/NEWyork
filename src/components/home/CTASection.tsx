@@ -29,14 +29,14 @@ const CTASection = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="heroOutline" size="xl" className="w-full sm:w-auto group" asChild>
-              <Link to="/quote">
+              <Link to="/quote/">
                 Get Your Free Quote
                 <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button 
-              variant="ghost" 
-              size="xl" 
+            <Button
+              variant="ghost"
+              size="xl"
               className="w-full sm:w-auto text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
               asChild
             >

@@ -70,7 +70,7 @@ const Services = () => {
                       ))}
                     </ul>
                     <Link
-                      to="/contact"
+                      to="/contact/"
                       className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
                     >
                       Get a Quote <HiArrowRight className="w-5 h-5" />

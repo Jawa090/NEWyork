@@ -86,7 +86,13 @@ export default function SEOHead({
   // 4. Resolve Final Values (Priority: WP > Local > Props)
   const title = wpData?.title || localSeoData?.title || propTitle;
   const description = wpData?.description || localSeoData?.description || propDescription;
-  const canonical = wpData?.canonicalUrl || localSeoData?.canonical || propCanonical || (typeof window !== 'undefined' ? window.location.href : '');
+
+  // Resolve canonical URL and ensure trailing slash
+  let canonical = wpData?.canonicalUrl || localSeoData?.canonical || propCanonical || (typeof window !== 'undefined' ? window.location.origin + window.location.pathname : '');
+
+  if (canonical && !canonical.endsWith('/') && !canonical.split('/').pop()?.includes('.')) {
+    canonical += '/';
+  }
   const ogImage = wpData?.ogImage || localSeoData?.ogImage || propOgImage;
   const ogType = wpData?.ogType || localSeoData?.ogType || 'website';
 

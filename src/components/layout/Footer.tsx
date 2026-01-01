@@ -10,10 +10,10 @@ const Footer = () => {
   // Match the navbar structure exactly
   const quickLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Contact Us', href: '/contact' },
-    { name: 'Get Free Quote', href: '/contact' },
+    { name: 'About Us', href: '/about/' },
+    { name: 'Pricing', href: '/pricing/' },
+    { name: 'Contact Us', href: '/contact/' },
+    { name: 'Get Free Quote', href: '/contact/' },
   ];
 
   // Featured project type services for footer
@@ -42,9 +42,9 @@ const Footer = () => {
           {/* About Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
-              <img 
-                src="/logo.png.png" 
-                alt="New York Estimators" 
+              <img
+                src="/logo.png.png"
+                alt="New York Estimators"
                 className="h-32 w-auto object-contain brightness-0 invert"
               />
             </Link>
@@ -94,7 +94,7 @@ const Footer = () => {
               {featuredServices.map((service) => (
                 <li key={service.slug}>
                   <Link
-                    to={`/services/${service.slug}`}
+                    to={`/services/${service.slug}/`}
                     className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors"
                   >
                     {service.title.replace(' Services', '').replace(' Estimating', '')}
@@ -103,7 +103,7 @@ const Footer = () => {
               ))}
               <li>
                 <Link
-                  to="/services"
+                  to="/services/"
                   className="text-primary-foreground hover:text-accent text-sm font-medium transition-colors"
                 >
                   View All Services →
@@ -135,7 +135,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            
+
             {/* Featured Trades */}
             <div className="mt-6">
               <h5 className="text-sm font-medium mb-3">Popular Trades</h5>
@@ -143,7 +143,7 @@ const Footer = () => {
                 {footerTrades.map((trade) => (
                   <Link
                     key={trade.slug}
-                    to={`/trade/${trade.slug}`}
+                    to={`/trade/${trade.slug}/`}
                     className="block text-primary-foreground/70 hover:text-primary-foreground text-xs transition-colors"
                   >
                     {trade.title.replace(' Contractors', '')}
@@ -162,10 +162,10 @@ const Footer = () => {
             © {currentYear} New York Estimators. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/privacy" className="text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors">
+            <Link to="/privacy/" className="text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors">
+            <Link to="/terms/" className="text-primary-foreground/70 hover:text-primary-foreground text-sm transition-colors">
               Terms of Service
             </Link>
           </div>

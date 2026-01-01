@@ -73,7 +73,7 @@ const Sitemap = () => {
                                         {pages.map((page) => (
                                             <li key={page.id}>
                                                 <Link
-                                                    to={`/${page.slug}`}
+                                                    to={`/${page.slug}/`}
                                                     className="text-primary hover:underline hover:text-primary/80 transition-colors"
                                                 >
                                                     {page.title.rendered}
@@ -87,7 +87,7 @@ const Sitemap = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="/blog" className="text-primary hover:underline hover:text-primary/80 transition-colors">
+                                            <Link to="/blog/" className="text-primary hover:underline hover:text-primary/80 transition-colors">
                                                 Blog
                                             </Link>
                                         </li>
@@ -102,7 +102,7 @@ const Sitemap = () => {
                                             {posts.map((post) => (
                                                 <li key={post.id}>
                                                     <Link
-                                                        to={`/blog/${post.slug}`}
+                                                        to={`/blog/${post.slug}/`}
                                                         className="text-primary hover:underline hover:text-primary/80 transition-colors"
                                                     >
                                                         {post.title.rendered}

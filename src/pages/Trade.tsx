@@ -48,7 +48,7 @@ const Trade = () => {
       </Helmet>
 
       <Navbar />
-      
+
       <main>
         {/* Hero */}
         <section className="pt-56 pb-16 md:pt-60 md:pb-16 bg-primary">
@@ -108,7 +108,7 @@ const Trade = () => {
                         ))}
                       </ul>
                       <Link
-                        to="/contact"
+                        to="/contact/"
                         className="inline-flex items-center gap-2 text-primary font-medium text-sm mt-4 hover:gap-3 transition-all"
                       >
                         Get a Quote <HiArrowRight className="w-4 h-4" />

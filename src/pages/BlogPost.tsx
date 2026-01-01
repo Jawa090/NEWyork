@@ -75,7 +75,7 @@ const BlogPost = () => {
                         <h1 className="text-4xl font-serif font-bold">Post Not Found</h1>
                         <p className="text-muted-foreground">The article you are looking for does not exist or has been removed.</p>
                         <Button asChild>
-                            <Link to="/blog">Return to Blog</Link>
+                            <Link to="/blog/">Return to Blog</Link>
                         </Button>
                     </div>
                 </main>
@@ -104,7 +104,7 @@ const BlogPost = () => {
                     <article className="container-custom max-w-4xl mx-auto">
                         {/* Back Link */}
                         <Link
-                            to="/blog"
+                            to="/blog/"
                             className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-8"
                         >
                             <HiArrowLeft className="mr-2 w-4 h-4" />
