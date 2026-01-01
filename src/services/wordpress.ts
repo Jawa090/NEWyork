@@ -212,11 +212,19 @@ export const wordpressService = {
         const fallbackHead = extractFallbackHeadData(post);
 
         // 2. Merge Strategies (RankMath takes precedence, then Yoast, then Parsing Head, then Defaults)
-        return {
+        const mergedData = {
             ...defaultData,
             ...fallbackHead,
             ...yoast,
             ...rankMath,
         };
+
+        // 3. Sanitize Canonical URL (Remove 'cms.' subdomain to match frontend)
+        if (mergedData.canonicalUrl) {
+            // Regex matches "http://cms." or "https://cms." and removes "cms."
+            mergedData.canonicalUrl = mergedData.canonicalUrl.replace(/^(https?:\/\/)(cms\.)/i, '$1');
+        }
+
+        return mergedData;
     }
 };
